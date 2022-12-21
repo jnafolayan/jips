@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../static/index.css" />
     <title>Lectures</title>
   </head>
   <body>

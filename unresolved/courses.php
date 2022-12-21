@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../static/index.css" />
     <title>Courses</title>
   </head>
   <body>
@@ -20,7 +21,7 @@
       <div class="course-container">
         <div class="course-card shadow-sm">
           <div class="img">
-            <img src="./images/books.jpg" class="card-img-top" alt="books" />
+            <img src="../static/images/books.jpg" class="card-img-top" alt="books" />
           </div>
           <div class="card-body">
             <h5 class="card-title">CSC 415</h5>
@@ -32,7 +33,7 @@
         </div>
         <div class="course-card shadow-sm">
           <div class="img">
-            <img src="./images/books.jpg" class="card-img-top" alt="books" />
+            <img src="../static/images/books.jpg" class="card-img-top" alt="books" />
           </div>
           <div class="card-body">
             <h5 class="card-title">CSC 415</h5>
@@ -44,7 +45,7 @@
         </div>
         <div class="course-card shadow-sm">
           <div class="img">
-            <img src="./images/books.jpg" class="card-img-top" alt="books" />
+            <img src="../static/images/books.jpg" class="card-img-top" alt="books" />
           </div>
           <div class="card-body">
             <h5 class="card-title">CSC 415</h5>
@@ -56,7 +57,7 @@
         </div>
         <div class="course-card shadow-sm">
           <div class="img">
-            <img src="./images/books.jpg" class="card-img-top" alt="books" />
+            <img src="../static/images/books.jpg" class="card-img-top" alt="books" />
           </div>
           <div class="card-body">
             <h5 class="card-title">CSC 415</h5>
