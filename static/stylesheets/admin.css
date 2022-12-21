@@ -28,8 +28,7 @@ a, a:hover {
 .aside {
   display: flex;
   justify-content: center;
-  text-align: center;
-  /* background-color: #292951; */
+  text-align: start;
   background-color: #222244;
   height: 100%;
   padding-top: 5%;
