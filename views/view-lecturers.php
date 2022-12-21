@@ -5,6 +5,7 @@ $style = "../static/stylesheets/view-lecturers.css";
 $lecturers = [];
 for ($i = 1; $i < 21; $i++) {
   $lecturer = [
+    "sn" => $i,
     "id" => "Lect{$i}_ID",
     "title" => "Lecturer{$i}_Title",
     "lastname" => "Lecturer{$i}_Lastname",
@@ -29,7 +30,6 @@ for ($i = 1; $i < 21; $i++) {
         <thead>
           <tr>
             <th scope="col">S/N</th>
-            <th scope="col">Title</th>
             <th scope="col">Lastname</th>
             <th scope="col">Firstname</th>
             <th scope="col">Department</th>
@@ -40,17 +40,15 @@ for ($i = 1; $i < 21; $i++) {
         <tbody>
           <?php 
           foreach($lecturers as $lecturer) {
-            $edit_btn = "<a href='' class='btn btn-primary'>Edit</a>";
-            $delete_btn = "<a href='' class='btn btn-danger'>Delete</a>";
+            $view_btn = "<a href='view-lecturer-info.php' class='btn btn-primary'>View</a>";
             $content = <<< EOD
             <tr>
-              <th scope="row">{$lecturer["id"]}</th>
-              <td>{$lecturer["title"]}</td>
+              <th scope="row">{$lecturer["sn"]}</th>
               <td>{$lecturer["lastname"]}</td>
               <td>{$lecturer["firstname"]}</td>
               <td>{$lecturer["department"]}</td>
               <td>{$lecturer["course"]}</td>
-              <td>{$edit_btn}{$delete_btn}</td>
+              <td>{$view_btn}</td>
             </tr>
             EOD;
 
