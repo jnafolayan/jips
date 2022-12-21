@@ -1,7 +1,8 @@
 <?php
 require_once('../lib/layout.php');
 $title = "Lecture Attendance System";
-$style = "../static/stylesheets/view-course-info.css";
+$style = "../static/stylesheets/edit-course-info.css";
+$lecturers = ["Lecturer 1", "Lecturer 2", "Lecturer 3", "Lecturer 4", "Lecturer 5"];
 $course = [
   "id" => "Lect_ID",
   "course_code" => "Course Code",
@@ -20,36 +21,33 @@ $course = [
     </div>
 
     <div class="col-10 main-content">
-      <h1 id="form-title">View Course Info</h1>
+      <h1 id="form-title">Edit Course Info</h1>
       <form id="course-info" class="row" method="POST" action="/<?php echo $course["id"]; ?>/edit-info.php">
         <div class="mb-3 col-md-12">
           <label for="course-code" class="form-label">Course Code</label>
-          <input type="text" class="form-control" id="course-code" name="course-code" value="<?php echo $course["course_code"] ?>" disabled readonly>
+          <input type="text" class="form-control" id="course-code" name="course-code" value="<?php echo $course["course_code"] ?>">
         </div>
 
         <div class="mb-3 col-md-12">
           <label for="course-title" class="form-label">Course Title</label>
-          <input type="text" class="form-control" id="course-title" name="course-title" value="<?php echo $course["course_title"] ?>" disabled readonly>
+          <input type="text" class="form-control" id="course-title" name="course-title" value="<?php echo $course["course_title"] ?>">
         </div>
 
         <div class="mb-3 col-md-12">
           <label for="assigned-lecturer" class="form-label">Assigned Lecturer</label>
-          <input type="text" class="form-control" id="assigned-lecturer" name="assigned-lecturer" value="<?php echo $course["assigned_lecturer"] ?>" disabled readonly>
+          <select class="form-select" name="lecturer" id="lecturer">
+            <?php
+            for ($i = 0; $i < sizeof($lecturers); $i++) {
+              echo "<option value='lecturer.id'>{$lecturers[$i]}</option>";
+            }
+            ?>
+          </select>
         </div>
 
         <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-6">
-              <button type="submit" class="btn btn-primary" id="submit-btn">Edit Info</button>
-            </div>
-            <div class="col-md-6">
-              <button type="submit" class="btn btn-danger" id="delete-btn">Delete Course</button>
-            </div>
-          </div>
+          <button type="submit" class="btn btn-success" id="update-btn">Update Info</button>
         </div>
       </form>
     </div>
   </div>
 </div>
-
-<script src="../static/scripts/view-course-info.js"></script>
