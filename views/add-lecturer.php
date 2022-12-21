@@ -4,7 +4,7 @@ $title = "Lecture Attendance System";
 $style = "../static/add-lecturer.css";
 $lecturers = ["Lecturer 1", "Lecturer 2", "Lecturer 3", "Lecturer 4", "Lecturer 5"];
 $courses = ["Course 1", "Course 2", "Course 3", "Course 4", "Course 5"];
-$titles = ["Mr.", "Mrs.", "Miss", "Dr.", "Professor"]
+$titles = ["Mr.", "Mrs.", "Miss", "Dr.", "Professor"];
 ?>
 
 
@@ -18,7 +18,7 @@ $titles = ["Mr.", "Mrs.", "Miss", "Dr.", "Professor"]
 
     <div class="col-10 main-content">
       <h1 id="form-title">Add New Lecturer</h1>
-      <form id="new-course-form" class="row">
+      <form id="new-course-form" class="row" method="post" action="">
         <div class="mb-3 col-md-2">
           <label for="Title" class="form-label">Title</label>
           <select class="form-select" name="title" id="title">
@@ -31,13 +31,13 @@ $titles = ["Mr.", "Mrs.", "Miss", "Dr.", "Professor"]
         </div>
 
         <div class="mb-3 col-md-5">
-          <label for="lastname" class="form-label">Lastname</label>
-          <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Lastname">
+          <label for="lastName" class="form-label">Lastname</label>
+          <input type="text" class="form-control" id="lastname" name="lastName" placeholder="Lastname">
         </div>
 
         <div class="mb-3 col-md-5">
-          <label for="firstname" class="form-label">Firstname</label>
-          <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Firstname">
+          <label for="firstName" class="form-label">Firstname</label>
+          <input type="text" class="form-control" id="firstname" name="firstName" placeholder="Firstname">
         </div>
 
         <div class="mb-3 col-md-12">

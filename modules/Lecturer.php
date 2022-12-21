@@ -4,6 +4,21 @@ require_once(__DIR__ . '/../db.php');
 
 class Lecturer
 {
+    public static function createLecturer($employeeID, $firstName, $lastName, $email)
+    {
+        $passwordHash = strtolower($lastName);
+
+        $conn = DB::getConnection();
+        $res = $conn->query("INSERT INTO lecturer (employeeID, passwordHash, firstName, lastName, email) 
+        VALUES ('$employeeID', '$passwordHash', '$firstName', '$lastName', '$email')");
+
+        if ($res === true) {
+            return $conn->insert_id;
+        }
+
+        return false;
+    }
+
     public static function getLecturers()
     {
         $conn = DB::getConnection();
@@ -14,6 +29,7 @@ class Lecturer
                 array_push($result, $row);
             }
         }
+
         return $result;
     }
 

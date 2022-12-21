@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS `lecturer` (
     firstName VARCHAR(255) NOT NULL,
     lastName VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
+    department VARCHAR(255) NOT NULL,
     createdAt DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     PRIMARY KEY(id)
 );
