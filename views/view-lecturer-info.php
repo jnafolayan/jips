@@ -56,11 +56,14 @@ $lecturer = [
               <button type="submit" class="btn btn-primary" id="submit-btn">Edit Info</button>
             </div>
             <div class="col-md-6">
-              <button type="button" class="btn btn-danger" id="delete-btn">Delete</button>
+              <button type="button" class="btn btn-danger" id="delete-btn">Delete Lecturer</button>
             </div>
           </div>
         </div>
+
       </form>
     </div>
   </div>
 </div>
+
+<script src="../static/scripts/view-lecturer-info.js"></script>

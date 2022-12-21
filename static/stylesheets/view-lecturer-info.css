@@ -79,7 +79,7 @@ ul li a:hover {
   max-width: 75%;
 }
 
-#submit-btn {
+#submit-btn, #delete-btn {
   width: 100%;
 }
 
