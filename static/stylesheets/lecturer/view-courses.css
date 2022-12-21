@@ -1,0 +1,62 @@
+.img {
+  height: 250px !important;
+
+  object-fit: cover;
+  object-position: bottom;
+}
+.img img {
+  height: 100% !important;
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.course-card {
+  flex-shrink: 0;
+  width: 370px;
+  border: solid 0.05px #ccc;
+  border-radius: 0.5rem;
+}
+
+.course-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.course-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.lecturers {
+  font-weight: 600;
+}
+
+.courses h1,
+.course h1,
+.profile h1,
+.signin h1 {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.course-card .btn {
+  margin-top: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 90%;
+  width: 100%;
+  padding-top: 1em;
+  margin-right: -1em;
+}
