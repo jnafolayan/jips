@@ -48,6 +48,7 @@ function layout_shutdown()
 
     global $title;
     global $style;
+    global $script;
     require $layout;
 }
 register_shutdown_function('layout_shutdown');
