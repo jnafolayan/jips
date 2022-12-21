@@ -1,7 +1,6 @@
 <?php
-require_once('../lib/layout.php');
-$title = "Lecture Attendance System";
-$style = "../static/stylesheets/view-lecturer-info.css";
+require_once('../../lib/layout.php');
+$style = "../../static/stylesheets/admin/view-lecturer-info.css";
 $script = "../static/scripts/view-lecturer-info.js";
 $lecturer = [
   "lecturer_id" => "Lect_ID",

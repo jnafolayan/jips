@@ -1,7 +1,7 @@
 <?php
-require_once('../lib/layout.php');
+require_once('../../lib/layout.php');
 $title = "Course Information";
-$style = "../static/index.css";
+$style = "../../static/index.css";
 ?>
 
 <?php include "layouts/header.php"; ?>
