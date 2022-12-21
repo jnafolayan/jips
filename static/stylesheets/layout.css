@@ -67,6 +67,8 @@ ul li a:hover {
   height: 100vh;
 }
 
+/* If this style block causes issues in your layout simply make a .wrapper class for your layout and put
+your content inside that wrapper, then let that wrapper be a direct child of the container using this class */
 .main-content {
   display: flex;
   flex-direction: column;
