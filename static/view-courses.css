@@ -3,6 +3,10 @@
   padding: 0px;
 }
 
+body {
+  overflow: hidden;
+}
+
 .header {
   background-color: #222244;
   line-height: 4em;
