@@ -39,7 +39,6 @@ $courses = ["Course 1", "Course 2", "Course 3", "Course 4", "Course 5"];
           <input type="time" id="time" class="form-control" />
         </div>
 
-
         <button type="submit" class="btn btn-success" id="submit-btn">Add Lecture</button>
       </form>
     </div>
