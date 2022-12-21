@@ -56,7 +56,7 @@ $lecturer = [
               <button type="submit" class="btn btn-primary" id="submit-btn">Edit Info</button>
             </div>
             <div class="col-md-6">
-              <button type="button" class="btn btn-danger" id="submit-btn">Delete</button>
+              <button type="button" class="btn btn-danger" id="delete-btn">Delete</button>
             </div>
           </div>
         </div>
