@@ -2,21 +2,34 @@
 
 require_once(__DIR__ . '/../db.php');
 
-class Lecturer
+class Course
 {
-    public static function createLecturer($employeeID, $firstName, $lastName, $email)
+    public static function createCourse($code, $title, $lecturerID)
     {
-        $passwordHash = strtolower($lastName);
-
         $conn = DB::getConnection();
-        $res = $conn->query("INSERT INTO lecturer (employeeID, passwordHash, firstName, lastName, email) 
-        VALUES ('$employeeID', '$passwordHash', '$firstName', '$lastName', '$email')");
+        $res = $conn->query("INSERT INTO course (code, title) 
+        VALUES ('$code', '$title', '$lecturerID')");
 
         if ($res === true) {
-            return $conn->insert_id;
+            $courseID = $conn->insert_id;
+            if (isset($lecturerID)) {
+                // ignore result because if it fails, the user should
+                // just retry
+                Course::registerLecturer($courseID, $lecturerID);
+            }
+            return $courseID;
         }
 
-        return false;
+        return null;
+    }
+
+    public static function registerLecturer($courseID, $lecturerID)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("INSERT INTO lecturerCourse (lecturerID, courseID)
+        VALUES ('$lecturerID', '$courseID');");
+
+        return $res === true;
     }
 
     public static function getLecturers()

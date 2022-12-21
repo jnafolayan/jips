@@ -35,26 +35,6 @@ class Auth
 
         return null;
     }
-
-    public static function lecturerSignUp($employeeID, $password, $firstName, $lastName, $email)
-    {
-        $passwordHash = $password;
-
-        $conn = DB::getConnection();
-        $res = $conn->query("INSERT INTO lecturer (employeeID, passwordHash, firstName, lastName, email) 
-        VALUES ('$employeeID', '$passwordHash', '$firstName', '$lastName', '$email')");
-
-        if ($res->num_rows > 0) {
-            $lecturer = $res->fetch_assoc();
-            $role = "lecturer";
-            return array(
-                "user" => $lecturer,
-                "role" => $role,
-            );
-        }
-
-        return null;
-    }
 }
 
 ?>
