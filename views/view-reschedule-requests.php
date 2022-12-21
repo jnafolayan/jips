@@ -1,7 +1,7 @@
 <?php
 require_once('../lib/layout.php');
 $title = "Lecture Attendance System";
-$style = "../static/view-reschedule-requests.css";
+$style = "../static/stylesheets/view-reschedule-requests.css";
 $requests = [];
 
 for ($i = 1; $i < 21; $i++) {

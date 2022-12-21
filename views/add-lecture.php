@@ -1,7 +1,7 @@
 <?php
 require_once('../lib/layout.php');
 $title = "Lecture Attendance System";
-$style = "../static/add-lecture.css";
+$style = "../static/stylesheets/add-lecture.css";
 $lecturers = ["Lecturer 1", "Lecturer 2", "Lecturer 3", "Lecturer 4", "Lecturer 5"];
 $courses = ["Course 1", "Course 2", "Course 3", "Course 4", "Course 5"];
 ?>
@@ -38,7 +38,6 @@ $courses = ["Course 1", "Course 2", "Course 3", "Course 4", "Course 5"];
           <label for="time">Time</label>
           <input type="time" id="time" class="form-control" />
         </div>
-
 
         <button type="submit" class="btn btn-success" id="submit-btn">Add Lecture</button>
       </form>
