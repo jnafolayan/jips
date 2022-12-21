@@ -4,6 +4,6 @@
   <li><a href="add-lecturer.php">Add Lecturer</a></li>
   <li><a href="view-courses.php">View Courses</a></li>
   <li><a href="">View Lectures</a></li>
-  <li><a href="">View Lecturers</a></li>
-  <li><a href="">Reschedule Lecture</a></li>
+  <li><a href="view-lecturers.php">View Lecturers</a></li>
+  <li><a href="view-reschedule-requests.php">View Reschedule Requests</a></li>
 </ul>
