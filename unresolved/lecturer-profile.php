@@ -10,7 +10,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../static/index.css" />
     <title>Lecturer Profile</title>
   </head>
   <body>
@@ -19,7 +19,7 @@
 
       <div class="d-flex profile-info">
         <div class="picture">
-          <img src="/images/avatar.png" alt="" />
+          <img src="../static/images/avatar.png" alt="" />
         </div>
 
         <div class="details">
