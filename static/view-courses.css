@@ -75,6 +75,7 @@ ul li a:hover {
   width: 15rem;
   height: 8em;
   margin: 1em;
+  text-align: center;
 }
 
 #new-course-form {
