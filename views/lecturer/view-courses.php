@@ -1,27 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="../static/index.css" />
-    <title>Courses</title>
-  </head>
-  <body>
+<?php
+require_once('../../lib/layout.php');
+$style = "../../static/stylesheets/lecturer/view-courses.css";
+$courses = [];
+for ($i = 1; $i < 21; $i++) {
+  $course = [
+    "sn" => $i,
+    "course_id" => "Course{$i}_ID",
+    "course_code" => "Course{$i}_Code",
+    "course_title" => "Course{$i}_Title",
+    "assigned_lecturers" => ["Assigned_Lecturer1"],
+  ];
+  array_push($courses, $course);
+}
+?>
+
+<div class="wrapper">
+  <div class="row" id="courses">
     <div class="courses container">
       <h1>Courses</h1>
 
       <div class="course-container">
+
+        <?php
+        foreach ($courses as $course) {
+          $content = <<<EOD
+            <div class="course-card shadow-sm">
+              <div class="img">
+                <img src="../../static/images/books.jpg" class="card-img-top" alt="books" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">CSC 415</h5>
+                <p class="card-text">Web Design</p>
+                <p>Lecturers: <span class="lecturers">Ikeoluwapo Are</span></p>
+                <a href="course.html" class="btn btn-dark">View Course</a>
+              </div>
+            </div>
+            EOD;
+
+          echo $content;
+        }
+        ?>
+        <!-- <div class="course-card shadow-sm">
+          <div class="img">
+            <img src="../../static/images/books.jpg" class="card-img-top" alt="books" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">CSC 415</h5>
+            <p class="card-text">Web Design</p>
+            <p>Lecturers: <span class="lecturers">Ikeoluwapo Are</span></p>
+            <a href="course.html" class="btn btn-dark">View Course</a>
+          </div>
+        </div>
+
         <div class="course-card shadow-sm">
           <div class="img">
-            <img src="../static/images/books.jpg" class="card-img-top" alt="books" />
+            <img src="../../static/images/books.jpg" class="card-img-top" alt="books" />
           </div>
           <div class="card-body">
             <h5 class="card-title">CSC 415</h5>
@@ -31,49 +64,31 @@
             <a href="course.html" class="btn btn-dark">View Course</a>
           </div>
         </div>
+
         <div class="course-card shadow-sm">
           <div class="img">
-            <img src="../static/images/books.jpg" class="card-img-top" alt="books" />
+            <img src="../../static/images/books.jpg" class="card-img-top" alt="books" />
           </div>
           <div class="card-body">
             <h5 class="card-title">CSC 415</h5>
             <p class="card-text">Web Design</p>
-
             <p>Lecturers: <span class="lecturers">Ikeoluwapo Are</span></p>
             <a href="course.html" class="btn btn-dark">View Course</a>
           </div>
         </div>
+
         <div class="course-card shadow-sm">
           <div class="img">
-            <img src="../static/images/books.jpg" class="card-img-top" alt="books" />
+            <img src="../../static/images/books.jpg" class="card-img-top" alt="books" />
           </div>
           <div class="card-body">
             <h5 class="card-title">CSC 415</h5>
             <p class="card-text">Web Design</p>
-
             <p>Lecturers: <span class="lecturers">Ikeoluwapo Are</span></p>
             <a href="course.html" class="btn btn-dark">View Course</a>
           </div>
-        </div>
-        <div class="course-card shadow-sm">
-          <div class="img">
-            <img src="../static/images/books.jpg" class="card-img-top" alt="books" />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">CSC 415</h5>
-            <p class="card-text">Web Design</p>
-
-            <p>Lecturers: <span class="lecturers">Ikeoluwapo Are</span></p>
-            <a href="course.html" class="btn btn-dark">View Course</a>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <?php
-require_once('../lib/layout.php');
-$style = "../static/stylesheets/view-reschedule-requests.css";
+require_once('../../lib/layout.php');
+$style = "../../static/stylesheets/admin/view-reschedule-requests.css";
 $requests = [];
 
 for ($i = 1; $i < 21; $i++) {

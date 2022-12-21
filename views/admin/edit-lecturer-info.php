@@ -1,6 +1,6 @@
 <?php
-require_once('../lib/layout.php');
-$style = "../static/stylesheets/edit-lecturer-info.css";
+require_once('../../lib/layout.php');
+$style = "../../static/stylesheets/admin/edit-lecturer-info.css";
 $lecturer = [
   "id" => "Lect_ID",
   "title" => "Lect_Title",
