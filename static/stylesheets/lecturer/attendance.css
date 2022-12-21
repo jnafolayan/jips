@@ -1,0 +1,11 @@
+.registration div {
+  width: 20rem;
+}
+
+.registration div p {
+  font-weight: 600;
+}
+
+.registration form {
+  margin-top: 3rem;
+}
