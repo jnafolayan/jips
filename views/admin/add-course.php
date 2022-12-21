@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-require_once('../lib/layout.php');
-require_once('../modules/Department.php');
-require_once('../modules/Lecturer.php');
-require_once('../modules/Course.php');
+require_once('../../lib/layout.php');
+require_once('../../modules/Department.php');
+require_once('../../modules/Lecturer.php');
+require_once('../../modules/Course.php');
 
 $title = "Lecture Attendance System";
-$style = "../static/stylesheets/add-course.css";
+$style = "../../static/stylesheets/admin/add-course.css";
 
 $lecturers = Lecturer::getLecturers();
 $departments = Department::getDepartments();
@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
   if ($result != null) {
     header('location:view-courses.php');
   } else {
-    $submitError = 'Unable to create a course.';
+    $submitError = 'Unable to create course.';
   }
 }
 ?>
