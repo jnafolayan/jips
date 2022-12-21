@@ -1,0 +1,15 @@
+{
+    "name": "jnafolayan/jips",
+    "autoload": {
+        "psr-4": {
+            "app\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "John Afolayan",
+            "email": "jnafolayan@gmail.com"
+        }
+    ],
+    "require": {}
+}
