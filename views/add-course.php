@@ -1,18 +1,12 @@
 <?php
 require_once('../lib/layout.php');
-$title = "<title>Lecture Attendance System</title>";
-$style = "<link rel='stylesheet' href='../static/add-course.css' />";
+$title = "Lecture Attendance System";
+$style = "../static/add-course.css";
 $lecturers = ["Lecturer 1", "Lecturer 2", "Lecturer 3", "Lecturer 4", "Lecturer 5"];
 ?>
 
 
-<header class="header">
-  <a href="admin.php" id="header-text">Admin Dashboard</a>
-
-  <div class="logout">
-    <a href="logout.php" class="btn btn-primary">Logout</a>
-  </div>
-</header>
+<?php include "layouts/header.php"; ?>
 
 <div class="container">
   <div class="row h-100">
