@@ -4,11 +4,11 @@ require_once(__DIR__ . '/../db.php');
 
 class Course
 {
-    public static function createCourse($code, $title, $lecturerID)
+    public static function createCourse($code, $title, $departmentID, $lecturerID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("INSERT INTO course (code, title) 
-        VALUES ('$code', '$title', '$lecturerID')");
+        $res = $conn->query("INSERT INTO course (code, title, departmentID) 
+        VALUES ('$code', '$title', '$departmentID')");
 
         if ($res === true) {
             $courseID = $conn->insert_id;
