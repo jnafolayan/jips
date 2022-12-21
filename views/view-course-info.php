@@ -3,7 +3,7 @@ require_once('../lib/layout.php');
 $title = "Lecture Attendance System";
 $style = "../static/stylesheets/view-course-info.css";
 $course = [
-  "id" => "Lect_ID",
+  "course_id" => "Lect_ID",
   "course_code" => "Course Code",
   "course_title" => "Course Title",
   "assigned_lecturer" => "Assigned Lecturer",
@@ -21,7 +21,8 @@ $course = [
 
     <div class="col-10 main-content">
       <h1 id="form-title">View Course Info</h1>
-      <form id="course-info" class="row" method="POST" action="/<?php echo $course["id"]; ?>/edit-info.php">
+      <form id="course-info" class="row" method="POST" action="edit-course-info.php">
+        <input type="text" name="course-id" value="<?php echo $course["course_id"] ?>" hidden>
         <div class="mb-3 col-md-12">
           <label for="course-code" class="form-label">Course Code</label>
           <input type="text" class="form-control" id="course-code" name="course-code" value="<?php echo $course["course_code"] ?>" disabled readonly>
