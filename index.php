@@ -1,5 +1,5 @@
 <?php
 require_once('lib/layout.php');
-$title = 'hello worl';
+$title = "<title>Lecture Attendance System</title>";
 ?>
-hello world
+<!-- Not being used at the moment -->
