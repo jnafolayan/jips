@@ -1,0 +1,238 @@
+h1 {
+  font-size: 1.8rem;
+}
+
+.btn {
+  width: fit-content;
+}
+/* Lectures */
+
+.card {
+  width: 100% !important;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.lectures .row .col:nth-child(1) {
+  border-right: 0.05px solid #ccc;
+}
+
+.lectures .row {
+  border-bottom: 0.05px solid #ccc;
+}
+
+.lectures .row .col {
+  padding: 1rem 0;
+}
+
+.days-heading {
+  font-size: 18px;
+}
+
+.card-title {
+  font-size: 16px;
+}
+
+.card-link {
+  font-size: 12px;
+}
+
+/* Modal */
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-body p {
+  font-size: 14px;
+}
+
+/* Courses */
+.img {
+  height: 250px !important;
+
+  object-fit: cover;
+  object-position: bottom;
+}
+.img img {
+  height: 100% !important;
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.course-card {
+  flex-shrink: 0;
+  width: 370px;
+  border: solid 0.05px #ccc;
+  border-radius: 0.5rem;
+}
+
+.course-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.course-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.lecturers {
+  font-weight: 600;
+}
+
+.courses h1,
+.course h1,
+.profile h1,
+.signin h1 {
+  margin-bottom: 2.5rem;
+}
+
+.course-card .btn {
+  margin-top: 1rem;
+}
+
+/* Course & Lecture */
+
+.info h6 {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.info p {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* Lecture */
+
+.lecture .heading {
+  margin-bottom: 2.5rem;
+}
+
+.lecture .attendance {
+  margin-top: 9rem;
+}
+
+.attendance .row {
+  border-bottom: solid #ccc 0.5px;
+}
+
+.attendance .row:first-child h6 {
+  font-size: 18px;
+}
+
+.attendance .col {
+  border-right: solid #ccc 0.5px;
+  padding: 0.5rem;
+}
+
+.attendance .col:last-child {
+  border-right: none;
+}
+
+.lecture-form label {
+  margin-bottom: 0.5rem;
+}
+
+.lecture-form label:last-child {
+  margin-bottom: 0;
+}
+
+/* Registration */
+
+.registration div {
+  width: 20rem;
+}
+
+.registration div p {
+  font-weight: 600;
+}
+
+.registration form {
+  margin-top: 3rem;
+}
+
+/* Profile */
+
+.picture {
+  width: 300px;
+  height: 300px;
+}
+
+.picture img {
+  width: 100%;
+}
+
+.profile-info {
+  gap: 5rem;
+}
+
+.profile .courses {
+  margin-top: 5rem;
+}
+
+.profile .details,
+.profile .details h6 {
+  font-size: 18px;
+}
+
+.details .values {
+  font-weight: 600;
+}
+
+.details .fields {
+  margin-bottom: 4px;
+}
+
+.courses h6 {
+  padding: 0;
+  font-size: 18px;
+}
+
+.courses .col {
+  padding: 0.5rem;
+}
+
+.courses .row:first-child .col {
+  border-bottom: solid 1px #ccc;
+}
+
+.courses h4 {
+  padding-left: 0;
+}
+
+.table {
+  padding: 1rem;
+}
+
+/* Students */
+
+.students h6 {
+  font-size: 18px;
+}
+
+.students p {
+  margin-bottom: 2rem;
+}
+
+/* Sign In */
+
+.signin{
+    height: 100vh;
+}
+
+.signin div {
+    width: 20rem;
+  }
