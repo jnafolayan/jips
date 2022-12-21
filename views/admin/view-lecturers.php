@@ -1,6 +1,6 @@
 <?php
-require_once('../lib/layout.php');
-$style = "../static/stylesheets/view-lecturers.css";
+require_once('../../lib/layout.php');
+$style = "../../static/stylesheets/admin/view-lecturers.css";
 $lecturers = [];
 for ($i = 1; $i < 21; $i++) {
   $lecturer = [

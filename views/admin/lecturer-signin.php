@@ -1,7 +1,7 @@
 <?php
-require_once('../lib/layout.php');
+require_once('../../lib/layout.php');
 $title = "Lecture Sign In";
-$style = "../static/index.css";
+$style = "../../static/index.css";
 
 $loginError = null;
 

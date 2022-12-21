@@ -1,6 +1,6 @@
 <?php
-require_once('../lib/layout.php');
-$style = "../static/stylesheets/add-course.css";
+require_once('../../lib/layout.php');
+$style = "../../static/stylesheets/admin/add-course.css";
 $lecturers = ["Lecturer 1", "Lecturer 2", "Lecturer 3", "Lecturer 4", "Lecturer 5"];
 ?>
 

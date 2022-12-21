@@ -1,6 +1,6 @@
 <?php
-require_once('../lib/layout.php');
-$style = "../static/stylesheets/view-reschedule-request-info.css";
+require_once('../../lib/layout.php');
+$style = "../../static/stylesheets/admin/view-reschedule-request-info.css";
 $script = "../static/scripts/view-reschedule-request-info.js";
 
 $request = [
