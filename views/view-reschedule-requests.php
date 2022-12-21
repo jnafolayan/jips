@@ -1,6 +1,5 @@
 <?php
 require_once('../lib/layout.php');
-$title = "Lecture Attendance System";
 $style = "../static/stylesheets/view-reschedule-requests.css";
 $requests = [];
 

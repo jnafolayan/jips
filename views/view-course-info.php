@@ -1,6 +1,5 @@
 <?php
 require_once('../lib/layout.php');
-$title = "Lecture Attendance System";
 $style = "../static/stylesheets/view-course-info.css";
 $script = "../static/scripts/view-course-info.js";
 $course = [
