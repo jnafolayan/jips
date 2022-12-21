@@ -1,7 +1,7 @@
 <?php
 require_once('../lib/layout.php');
 $title = "Lecture Attendance System";
-$style = "../static/admin.css";
+$style = "../static/stylesheets/admin.css";
 ?>
 
 <?php include "layouts/header.php"; ?>

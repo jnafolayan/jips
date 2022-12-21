@@ -1,7 +1,7 @@
 <?php
 require_once('../lib/layout.php');
 $title = "Lecture Attendance System";
-$style = "../static/add-course.css";
+$style = "../static/stylesheets/add-course.css";
 $lecturers = ["Lecturer 1", "Lecturer 2", "Lecturer 3", "Lecturer 4", "Lecturer 5"];
 ?>
 

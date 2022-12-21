@@ -1,7 +1,7 @@
 <?php
 require_once('../lib/layout.php');
 $title = "Lecture Attendance System";
-$style = "../static/view-lecturers.css";
+$style = "../static/stylesheets/view-lecturers.css";
 $lecturers = [];
 for ($i = 1; $i < 21; $i++) {
   $lecturer = [
