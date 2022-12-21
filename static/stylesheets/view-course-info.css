@@ -3,6 +3,10 @@
   padding: 0px;
 }
 
+body {
+  overflow: hidden;
+}
+
 .header {
   background-color: #222244;
   line-height: 4em;
@@ -14,9 +18,8 @@
   font-size: 1.5em;
 }
 
-a,
-a:hover {
-  text-decoration: none;
+a, a:hover {
+  text-decoration: none ;
   transition-property: color;
   transition-duration: 0.2s;
 }
@@ -32,7 +35,7 @@ a:hover {
   text-align: center;
   /* background-color: #292951; */
   background-color: #222244;
-  height: 100%;
+  height: 100vh;
   padding-top: 5%;
 }
 
@@ -70,17 +73,17 @@ ul li a:hover {
   align-items: center;
 }
 
-#new-course-form {
+#course-info {
   margin-top: 2%;
   width: 100%;
   max-width: 75%;
 }
 
-#submit-btn {
-  margin-top: 5%;
+#submit-btn, #delete-btn {
   width: 100%;
 }
 
 #form-title {
   margin-top: 1em;
 }
+
