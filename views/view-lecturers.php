@@ -3,7 +3,7 @@ require_once('../lib/layout.php');
 $title = "Lecture Attendance System";
 $style = "../static/view-lecturers.css";
 $lecturers = [];
-for ($i = 1; $i < 20 + 1; $i++) {
+for ($i = 1; $i < 21; $i++) {
   $lecturer = [
     "id" => "Lect{$i}_ID",
     "title" => "Lecturer{$i}_Title",
