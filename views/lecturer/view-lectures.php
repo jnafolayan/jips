@@ -33,7 +33,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="lecture.html" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -102,7 +102,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -147,7 +147,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -170,7 +170,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -187,7 +187,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
@@ -198,7 +198,7 @@ $style = "../../static/stylesheets/lecturer/view-lectures.css";
             <h5 class="card-title">CSC 415</h5>
             <h6 class="card-subtitle mb-2 text-muted">Web Design</h6>
 
-            <a href="#" target="_blank" class="card-link">View Lecture</a>
+            <a href="view-lecture.php" target="_blank" class="card-link">View Lecture</a>
           </div>
         </div>
       </div>
