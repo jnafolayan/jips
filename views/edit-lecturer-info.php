@@ -10,6 +10,11 @@ $lecturer = [
   "department" => "Lecturer_Department",
   "course" => "Lecturer_Course"
 ];
+
+// Functionality to be executed after a form is submitted// Functionality after a form is submitted
+if (isset($_POST["submit"])) {
+  null;
+}
 ?>
 
 

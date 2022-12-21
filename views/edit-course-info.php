@@ -9,6 +9,11 @@ $course = [
   "course_title" => "Course Title",
   "assigned_lecturer" => "Assigned Lecturer",
 ];
+
+// Functionality to be executed after a form is submitted
+if (isset($_POST["submit"])) {
+  null;
+}
 ?>
 
 
