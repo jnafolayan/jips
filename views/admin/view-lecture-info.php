@@ -49,7 +49,7 @@ $style = "../../static/stylesheets/admin/view-lecture-info.css";
         <div class="col-md-6">
           <form method="POST" action="delete-lecture.php">
             <input type="text" name="code" value="" hidden>
-            <button type="submit" class="btn btn-danger" id="delete-btn">Delete Course</button>
+            <button type="submit" class="btn btn-danger" id="delete-btn">Delete Lecture</button>
           </form>
         </div>
       </div>
