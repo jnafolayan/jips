@@ -1,15 +1,19 @@
 <?php
 
+require_once(__DIR__.'/lib/dotenv.php');
+
+load_envfile(__DIR__.'/.env');
+
 class DB
 {
     public static $connection;
 
     public static function getConnection()
     {
-        $host = "localhost";
-        $user = "root";
-        $pass = "password";
-        $dbname = "jips";
+        $host = getenv("HOST");
+        $user = getenv("USER");
+        $pass = getenv("PASS");
+        $dbname = getenv("DB_NAME");
 
         if (!isset(self::$connection)) {
             $conn = new mysqli($host, $user, $pass, $dbname);

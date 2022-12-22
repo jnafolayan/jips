@@ -19,6 +19,8 @@ $courses = Course::getCourses();
         <div class='card-body'>
           <h5 class='card-title'>$code</h5>
           <p class='card-text'>$title</p>
+
+          <a href='/views/admin/view-course-info.php?code=$code'>Open course</a>
         </div>
       </div>";
     }

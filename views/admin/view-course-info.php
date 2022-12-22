@@ -2,31 +2,42 @@
 require_once('../../lib/layout.php');
 $style = "../../static/stylesheets/admin/view-course-info.css";
 $script = "../static/scripts/view-course-info.js";
-$course = [
-  "course_id" => "Lect_ID",
-  "course_code" => "Course Code",
-  "course_title" => "Course Title",
-  "assigned_lecturer" => "Assigned Lecturer",
-];
+
+require_once('../../modules/Course.php');
+
+$code = isset($_GET['code']) ? $_GET['code'] : null;
+$course = Course::getCourseByCode($code);
+if (!$course) {
+  header('location: not-found.php');
+}
+
+$lecturers = Course::getAssignedLecturers($course['id']);
+$lecturerNames = [];
+foreach ($lecturers as $l) {
+  array_push($lecturerNames, $l['firstName'] . ' ' . $l['lastName']);
+}
 ?>
 
 
 <h1 id="form-title">View Course Info</h1>
 <form id="course-info" class="row" method="POST" action="edit-course-info.php">
-  <input type="text" name="course-id" value="<?php echo $course["course_id"] ?>" hidden>
+  <input type="text" name="course-id" value="<?php echo $course["id"] ?>" hidden>
   <div class="mb-3 col-md-12">
     <label for="course-code" class="form-label">Course Code</label>
-    <input type="text" class="form-control" id="course-code" name="course-code" value="<?php echo $course["course_code"] ?>" disabled readonly>
+    <input type="text" class="form-control" id="course-code" name="course-code" value="<?php echo $course["code"] ?>"
+      disabled readonly>
   </div>
 
   <div class="mb-3 col-md-12">
     <label for="course-title" class="form-label">Course Title</label>
-    <input type="text" class="form-control" id="course-title" name="course-title" value="<?php echo $course["course_title"] ?>" disabled readonly>
+    <input type="text" class="form-control" id="course-title" name="course-title" value="<?php echo $course["title"] ?>"
+      disabled readonly>
   </div>
 
   <div class="mb-3 col-md-12">
-    <label for="assigned-lecturer" class="form-label">Assigned Lecturer</label>
-    <input type="text" class="form-control" id="assigned-lecturer" name="assigned-lecturer" value="<?php echo $course["assigned_lecturer"] ?>" disabled readonly>
+    <label for="assigned-lecturer" class="form-label">Assigned Lecturers</label>
+    <input type="text" class="form-control" id="assigned-lecturer" name="assigned-lecturer"
+      value="<?php echo implode(", ", $lecturerNames) ?>" disabled readonly>
   </div>
 
   <div class="col-md-12">
