@@ -25,6 +25,10 @@ $style = "../../static/stylesheets/index.css";
             <p>Computer Science</p>
           </div>
           <div>
+            <h6>Level</h6>
+            <p>400</p>
+          </div>
+          <div>
             <h6>Period</h6>
             <p>Monday 8:00 - 9:00</p>
           </div>
