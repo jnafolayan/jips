@@ -1,0 +1,46 @@
+/* Modal */
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-body p {
+  font-size: 14px;
+}
+
+/* Lecture */
+
+.lecture .heading {
+  margin-bottom: 2.5rem;
+}
+
+.lecture .attendance {
+  margin-top: 9rem;
+}
+
+.attendance .row {
+  border-bottom: solid #ccc 0.5px;
+}
+
+.attendance .row:first-child h6 {
+  font-size: 18px;
+}
+
+.attendance .col {
+  border-right: solid #ccc 0.5px;
+  padding: 0.5rem;
+}
+
+.attendance .col:last-child {
+  border-right: none;
+}
+
+.lecture-form label {
+  margin-bottom: 0.5rem;
+}
+
+.lecture-form label:last-child {
+  margin-bottom: 0;
+}

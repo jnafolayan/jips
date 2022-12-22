@@ -1,5 +1,5 @@
 <?php
-require_once('../lib/layout.php');
+require_once('../../lib/layout.php');
 $title = "Course Information";
 $style = "../static/stylesheets/index.css";
 ?>

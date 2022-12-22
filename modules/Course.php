@@ -4,11 +4,11 @@ require_once(__DIR__ . '/../db.php');
 
 class Course
 {
-    public static function createCourse($code, $title, $lecturerID)
+    public static function createCourse($code, $title, $departmentID, $lecturerID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("INSERT INTO course (code, title) 
-        VALUES ('$code', '$title', '$lecturerID')");
+        $res = $conn->query("INSERT INTO course (code, title, departmentID) 
+        VALUES ('$code', '$title', '$departmentID')");
 
         if ($res === true) {
             $courseID = $conn->insert_id;
@@ -32,10 +32,11 @@ class Course
         return $res === true;
     }
 
-    public static function getLecturers()
+    public static function getCourses()
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT * FROM lecturer");
+        $res = $conn->query("SELECT code, title, departmentID, department.name AS departmentName 
+        FROM course LEFT JOIN department ON course.departmentID = department.id");
         $result = [];
         if ($res->num_rows > 0) {
             while ($row = $res->fetch_assoc()) {
@@ -46,10 +47,27 @@ class Course
         return $result;
     }
 
-    public static function getLecturerByEmployeeID($eid)
+    public static function getCourseByID($courseID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT * FROM lecturer WHERE employeeID='$eid'");
+        $res = $conn->query("SELECT code, title, departmentID, department.name AS departmentName 
+        FROM course WHERE id='$courseID' 
+        LEFT JOIN department ON course.departmentID = department.id");
+        $result = [];
+        if ($res->num_rows > 0) {
+            while ($row = $res->fetch_assoc()) {
+                array_push($result, $row);
+            }
+        }
+        return $result;
+    }
+
+    public static function getCourseByCode($courseCode)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("SELECT code, title, departmentID, department.name AS departmentName 
+        FROM course WHERE code='$courseCode' 
+        LEFT JOIN department ON course.departmentID = department.id");
         $result = [];
         if ($res->num_rows > 0) {
             while ($row = $res->fetch_assoc()) {

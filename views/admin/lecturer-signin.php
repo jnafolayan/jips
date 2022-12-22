@@ -1,4 +1,8 @@
 <?php
+require_once('../../lib/layout.php');
+$title = "Lecture Sign In";
+$style = "../../static/stylesheets/index.css";
+
 $loginError = null;
 
 require_once('../modules/Auth.php');
