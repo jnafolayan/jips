@@ -11,7 +11,13 @@ h1 {
   width: 100% !important;
 }
 
-.container {
+.lectures,
+.lecture,
+.registration,
+.profile,
+.course,
+.courses,
+.students {
   padding: 2rem;
 }
 
@@ -152,7 +158,8 @@ h1 {
 
 /* Registration */
 
-.registration div {
+.registration div,
+.registration .btn {
   width: 20rem;
 }
 
@@ -229,10 +236,15 @@ h1 {
 
 /* Sign In */
 
-.signin{
-    height: 100vh;
+.signin {
+  height: 100vh;
 }
 
-.signin div {
-    width: 20rem;
-  }
+.signin div,
+.signin .btn {
+  width: 20rem;
+}
+
+.signin .btn {
+  margin-top: 1rem;
+}

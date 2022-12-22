@@ -19,9 +19,8 @@
         <?php include "partials/side-bar.php" ?>
       </div>
 
-      <div class="col-10 main-content">
-        <?php echo $content; ?>
-      </div>
+    <div class="main-content">
+      <?php echo $content; ?>
     </div>
   </div>
 

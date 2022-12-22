@@ -10,8 +10,8 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../static/index.css" />
-    <title>Registration</title>
+    <link rel="stylesheet" href="../../static/stylesheets/index.css" />
+    <title>Student Registration</title>
   </head>
   <body>
     <div class="flex flex-column container align-items-center registration">
