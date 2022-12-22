@@ -1,11 +1,10 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: b;
 }
 
 body {
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .header {

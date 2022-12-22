@@ -23,12 +23,12 @@ foreach ($assignedLecturers as $l) {
 if (isset($_POST["submit"])) {
     $courseCode = $_POST["code"];
     $courseTitle = $_POST["title"];
-    $lecturerIDs = $_POST["lecturers"];
+    $lecturers = $_POST["lecturers"];
 
     // remove previously assigned lecturers
     Course::removeAssignedLecturers($courseID);
     
-    $result = Course::assignLecturers($courseID, $lecturerIDs);
+    $result = Course::assignLecturers($courseID, $lecturers);
     if ($result != null) {
         header('location:view-courses.php');
     } else {

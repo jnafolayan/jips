@@ -4,18 +4,18 @@ require_once(__DIR__ . '/../db.php');
 
 class Course
 {
-    public static function createCourse($code, $title, $departmentID, $lecturerID)
+    public static function createCourse($code, $title, $departmentID, $level, $lecturerIDs)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("INSERT INTO course (code, title, departmentID) 
-        VALUES ('$code', '$title', '$departmentID')");
+        $res = $conn->query("INSERT INTO course (code, title, departmentID, level) 
+        VALUES ('$code', '$title', '$departmentID', '$level')");
 
         if ($res === true) {
             $courseID = $conn->insert_id;
-            if (isset($lecturerID)) {
+            if (isset($lecturerIDs)) {
                 // ignore result because if it fails, the user should
                 // just retry
-                Course::assignLecturers($courseID, [$lecturerID]);
+                Course::assignLecturers($courseID, $lecturerIDs);
             }
             return $courseID;
         }
@@ -67,7 +67,29 @@ class Course
     {
         $conn = DB::getConnection();
         $res = $conn->query("SELECT l.* FROM lecturerCourse lc 
-        LEFT JOIN lecturer l ON lc.lecturerID = l.id");
+        LEFT JOIN lecturer l ON lc.lecturerID = l.id
+        WHERE lc.courseID = '$courseID'");
+
+        $result = [];
+        if ($res->num_rows > 0) {
+            while ($row = $res->fetch_assoc()) {
+                array_push($result, $row);
+            }
+        }
+ 
+        return $result;
+    }
+
+    /**
+     * Get courses for the lecturer identified by $lecturerID
+     * @param string $lecturerID
+     * @return array
+     */
+    public static function getLecturerCourses($lecturerID) {
+        $conn = DB::getConnection();
+        $res = $conn->query("SELECT c.* FROM lecturerCourse lc 
+        LEFT JOIN course c ON lc.courseID = c.id
+        WHERE lc.lecturerID = '$lecturerID'");
 
         $result = [];
         if ($res->num_rows > 0) {
@@ -82,7 +104,7 @@ class Course
     public static function getCourses()
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT course.id AS id, code, title, departmentID, department.name AS departmentName 
+        $res = $conn->query("SELECT course.id AS id, code, title, departmentID, level, department.name AS departmentName 
         FROM course LEFT JOIN department ON course.departmentID = department.id");
         $result = [];
         if ($res->num_rows > 0) {
@@ -97,10 +119,10 @@ class Course
     public static function getCourseByID($courseID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT course.id AS id, code, title, departmentID, department.name AS departmentName 
+        $res = $conn->query("SELECT course.id AS id, code, title, departmentID, level, department.name AS departmentName 
         FROM course 
         LEFT JOIN department ON course.departmentID = department.id 
-        WHERE code='$courseID'
+        WHERE course.id='$courseID'
         ");
         if ($res->num_rows > 0) {
             return $res->fetch_assoc();
@@ -111,7 +133,7 @@ class Course
     public static function getCourseByCode($courseCode)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT course.id AS id, code, title, departmentID, department.name AS departmentName 
+        $res = $conn->query("SELECT course.id AS id, code, title, departmentID, level, department.name AS departmentName 
         FROM course 
         LEFT JOIN department ON course.departmentID = department.id 
         WHERE code='$courseCode'");
