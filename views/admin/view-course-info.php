@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('../../lib/layout.php');
 $style = "../../static/stylesheets/admin/view-course-info.css";
 $script = "../static/scripts/view-course-info.js";
@@ -20,8 +21,7 @@ foreach ($lecturers as $l) {
 
 
 <h1 id="form-title">View Course Info</h1>
-<form id="course-info" class="row" method="POST" action="edit-course-info.php">
-  <input type="text" name="course-id" value="<?php echo $course["id"] ?>" hidden>
+<div id="course-info" class="row">
   <div class="mb-3 col-md-12">
     <label for="course-code" class="form-label">Course Code</label>
     <input type="text" class="form-control" id="course-code" name="course-code" value="<?php echo $course["code"] ?>"
@@ -43,11 +43,17 @@ foreach ($lecturers as $l) {
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-6">
-        <button type="submit" class="btn btn-primary" id="submit-btn">Edit Info</button>
+        <form method="GET" action="edit-course-info.php">
+          <input type="text" name="code" value="<?php echo $course["code"] ?>" hidden>
+          <button type="submit" class="btn btn-primary" id="submit-btn">Edit Info</button>
+        </form>
       </div>
       <div class="col-md-6">
-        <button type="submit" class="btn btn-danger" id="delete-btn">Delete Course</button>
+        <form method="POST" action="delete-course.php">
+          <input type="text" name="code" value="<?php echo $course["code"] ?>" hidden>
+          <button type="submit" class="btn btn-danger" id="delete-btn">Delete Course</button>
+        </form>
       </div>
     </div>
   </div>
-</form>
+  </form>

@@ -15,7 +15,7 @@ class Course
             if (isset($lecturerID)) {
                 // ignore result because if it fails, the user should
                 // just retry
-                Course::registerLecturer($courseID, $lecturerID);
+                Course::assignLecturers($courseID, [$lecturerID]);
             }
             return $courseID;
         }
@@ -23,11 +23,42 @@ class Course
         return null;
     }
 
-    public static function assignLecturer($courseID, $lecturerID)
+    public static function deleteCourse($courseID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("INSERT INTO lecturerCourse (lecturerID, courseID)
-        VALUES ('$lecturerID', '$courseID');");
+        $sql = "DELETE FROM course WHERE id='$courseID'";
+        $res = $conn->query($sql);
+
+        return $res === true;
+    }
+
+    public static function deleteCourseByCode($code)
+    {
+        $conn = DB::getConnection();
+        $sql = "DELETE FROM course WHERE code='$code'";
+        $res = $conn->query($sql);
+
+        return $res === true;
+    }
+
+    public static function assignLecturers($courseID, $lecturerIDs)
+    {
+        $conn = DB::getConnection();
+        $sql = "";
+        foreach ($lecturerIDs as $id) {
+            $sql .= "INSERT INTO lecturerCourse (lecturerID, courseID)
+            VALUES ('$id', '$courseID');";
+        }
+        $res = $conn->multi_query($sql);
+
+        return $res === true;
+    }
+
+    public static function removeAssignedLecturers($courseID)
+    {
+        $conn = DB::getConnection();
+        $sql = "DELETE FROM lecturerCourse WHERE courseID='$courseID'";
+        $res = $conn->query($sql);
 
         return $res === true;
     }

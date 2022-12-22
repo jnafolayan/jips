@@ -1,19 +1,11 @@
 <?php
 require_once('../../lib/layout.php');
 $style = "../../static/stylesheets/admin/view-lecturers.css";
-$lecturers = [];
-for ($i = 1; $i < 21; $i++) {
-  $lecturer = [
-    "sn" => $i,
-    "id" => "Lect{$i}_ID",
-    "title" => "Lecturer{$i}_Title",
-    "lastname" => "Lecturer{$i}_Lastname",
-    "firstname" => "Lecturer{$i}_Firstname",
-    "department" => "Lecturer{$i}_Department",
-    "course" => "Lecturer{$i}_Course"
-  ];
-  array_push($lecturers, $lecturer);
-}
+
+require_once('../../modules/Lecturer.php');
+
+$lecturers = Lecturer::getLecturers();
+
 ?>
 
 <div class="wrapper">

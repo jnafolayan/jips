@@ -4,11 +4,12 @@
   justify-content: center;
   height: 100vh;
   padding-top: 1em;
+  width: 100%;
 }
 
 .card {
   width: 15rem;
-  height: 8em;
+  min-height: 8em;
   margin: 1em;
   text-align: center;
 }
@@ -16,4 +17,8 @@
 #courses {
   justify-content: center;
   align-content: flex-start;
+}
+
+.no-courses {
+  padding: 3rem 0;
 }

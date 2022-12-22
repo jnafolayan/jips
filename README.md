@@ -14,10 +14,11 @@ php -S localhost:8080
 [x] http://localhost:8080/views/admin/add-course.php
 [ ] http://localhost:8080/views/admin/add-lecture.php
 [ ] http://localhost:8080/views/admin/add-lecturer.php
-[ ] http://localhost:8080/views/admin/edit-course-info.php
+[x] http://localhost:8080/views/admin/edit-course-info.php
 [ ] http://localhost:8080/views/admin/edit-lecturer-info.php
+[x] http://localhost:8080/views/admin/delete-course.php
 [x] http://localhost:8080/views/admin/view-course-info.php
-[ ] http://localhost:8080/views/admin/view-courses.php
+[x] http://localhost:8080/views/admin/view-courses.php
 [ ] http://localhost:8080/views/admin/view-lecturer-info.php
 [ ] http://localhost:8080/views/admin/view-lecturers.php
 [ ] http://localhost:8080/views/admin/view-reschedule-request-info.php
