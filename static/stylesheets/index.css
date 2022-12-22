@@ -11,7 +11,13 @@ h1 {
   width: 100% !important;
 }
 
-.container {
+.lectures,
+.lecture,
+.registration,
+.profile,
+.course,
+.courses,
+.students {
   padding: 2rem;
 }
 
@@ -152,7 +158,8 @@ h1 {
 
 /* Registration */
 
-.registration div , .registration .btn{
+.registration div,
+.registration .btn {
   width: 20rem;
 }
 

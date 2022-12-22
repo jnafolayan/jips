@@ -10,7 +10,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../static/stylesheets/index.css" />
+    <link rel="stylesheet" href="../../static/stylesheets/index.css" />
     <title>Student Registration</title>
   </head>
   <body>

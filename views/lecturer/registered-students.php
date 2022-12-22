@@ -1,7 +1,7 @@
 <?php
-require_once('../lib/layout.php');
+require_once('../../lib/layout.php');
 $title = "Registered Students";
-$style = "../static/stylesheets/index.css";
+$style = "../../static/stylesheets/index.css";
 
 $students = [
   '180003888',

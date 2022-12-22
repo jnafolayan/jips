@@ -1,7 +1,7 @@
 <?php
-require_once('../lib/layout.php');
+require_once('../../lib/layout.php');
 $title = "Lecturer Profile";
-$style = "../static/stylesheets/index.css";
+$style = "../../static/stylesheets/index.css";
 
 $lecturer = [
   'lecturer_id' => 1236778,
@@ -32,7 +32,7 @@ $lecturer = [
 
       <div class="d-flex profile-info">
         <div class="picture">
-          <img src="../static/images/avatar.png" alt="" />
+          <img src="../../static/images/avatar.png" alt="" />
         </div>
 
         <div class="details">

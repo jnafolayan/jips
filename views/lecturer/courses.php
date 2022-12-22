@@ -1,7 +1,7 @@
 <?php
-require_once('../lib/layout.php');
+require_once('../../lib/layout.php');
 $title = "Courses";
-$style = "../static/stylesheets/index.css";
+$style = "../../static/stylesheets/index.css";
 
 $courses = [
   [
@@ -46,7 +46,7 @@ $courses = [
       echo     "
       <div class='course-card shadow-sm'>
       <div class='img'>
-      <img src='../static/images/books.jpg' class='card-img-top' alt='books' />
+      <img src='../../static/images/books.jpg' class='card-img-top' alt='books' />
       </div>
       <div class='card-body'>
       <h5 class='card-title'>" . $course['course_code'] . "</h5>

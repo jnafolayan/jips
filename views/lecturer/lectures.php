@@ -1,7 +1,7 @@
 <?php
-require_once('../lib/layout.php');
+require_once('../../lib/layout.php');
 $title = "Lectures";
-$style = "../static/stylesheets/index.css";
+$style = "../../static/stylesheets/index.css";
 ?>
 
     <div class="lectures container d-grid">

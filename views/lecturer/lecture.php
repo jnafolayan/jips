@@ -1,8 +1,8 @@
 
   <?php
-require_once('../lib/layout.php');
+require_once('../../lib/layout.php');
 $title = "Lecture";
-$style = "../static/stylesheets/index.css";
+$style = "../../static/stylesheets/index.css";
 
 
 ?>
