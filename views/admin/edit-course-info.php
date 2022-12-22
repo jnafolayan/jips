@@ -1,6 +1,21 @@
 <?php
 require_once('../../lib/layout.php');
 $style = "../../static/stylesheets/admin/edit-course-info.css";
+
+require_once('../../modules/Course.php');
+
+$code = isset($_GET['code']) ? $_GET['code'] : null;
+$course = Course::getCourseByCode($code);
+if (!$course) {
+  header('location: not-found.php');
+}
+
+$lecturers = Course::getAssignedLecturers($course['id']);
+$lecturerNames = [];
+foreach ($lecturers as $l) {
+  array_push($lecturerNames, $l['firstName'] . ' ' . $l['lastName']);
+}
+
 $lecturers = ["Lecturer 1", "Lecturer 2", "Lecturer 3", "Lecturer 4", "Lecturer 5"];
 $course = [
   "id" => "Lect_ID",
