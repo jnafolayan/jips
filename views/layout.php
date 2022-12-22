@@ -13,15 +13,13 @@
 
 <body>
   <?php include "layouts/header.php" ?>
-  <div class="container">
-    <div class="row h-100">
-      <div class="col-2 aside">
-        <?php include "layouts/side-bar.php" ?>
-      </div>
+  <div class="content-row">
+    <div class="aside">
+      <?php include "layouts/side-bar.php" ?>
+    </div>
 
-      <div class="col-10 main-content">
-        <?php echo $content; ?>
-      </div>
+    <div class="main-content">
+      <?php echo $content; ?>
     </div>
   </div>
 

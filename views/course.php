@@ -1,18 +1,9 @@
 <?php
 require_once('../lib/layout.php');
 $title = "Course Information";
-$style = "../static/index.css";
+$style = "../static/stylesheets/index.css";
 ?>
 
-<?php include "layouts/header.php"; ?>
-
-<div class="container">
-  <div class="row h-100">
-    <div class="col-2">
-      <?php include "layouts/side-bar.php" ?>
-    </div>
-
-    <div class="col-10">
       <div class="course container">
         <h1>Web Design</h1>
       
@@ -61,8 +52,5 @@ $style = "../static/index.css";
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
 
