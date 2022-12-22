@@ -38,15 +38,15 @@ $style = "../../static/stylesheets/index.css";
             <div class="d-flex gap-3 flex-column">
               <div class="d-flex justify-content-between align-items-center">
                 <p>Ikeoluwapo Are</p>
-                <a class="btn btn-primary" href="profile.html">View Profile</a>
+                <a class="btn btn-primary" href="lecturer-profile.php">View Profile</a>
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <p>Ikeoluwapo Are</p>
-                <a class="btn btn-primary" href="">View Profile</a>
+                <a class="btn btn-primary" href="lecturer-profile.php">View Profile</a>
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <p>Ikeoluwapo Are</p>
-                <a class="btn btn-primary" href="">View Profile</a>
+                <a class="btn btn-primary" href="lecturer-profile.php">View Profile</a>
               </div>
             </div>
           </div>
