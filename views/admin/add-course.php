@@ -18,9 +18,10 @@ if (isset($_POST["submit"])) {
     $courseCode = $_POST["courseCode"];
     $courseTitle = $_POST["courseTitle"];
     $departmentID = $_POST["department"];
-    $lecturerID = $_POST["lecturer"];
+    $level = $_POST["level"];
+    $lecturerIDs = $_POST["lecturers"];
 
-    $result = Course::createCourse($courseCode, $courseTitle, $departmentID, $lecturerID);
+    $result = Course::createCourse($courseCode, $courseTitle, $departmentID, $level, $lecturerIDs);
     if ($result != null) {
         header('location:view-courses.php');
     } else {
@@ -62,8 +63,19 @@ if ($submitError) {
     </div>
 
     <div class="mb-3">
-        <label for="lecturer">Assigned Lecturer</label>
-        <select class="form-select" name="lecturer" id="lecturer">
+    <label for="level">Level</label>
+    <select name="level" id="level" class="form-select">
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option>
+        <option value="500">500</option>
+    </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="lecturers">Assigned Lecturers</label>
+        <select class="form-select" name="lecturers[]" id="lecturers" multiple>
             <option value="" selected> Select an option</option>
             <?php
       foreach ($lecturers as $lecturer) {

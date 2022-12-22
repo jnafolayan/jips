@@ -3,8 +3,11 @@ require_once('../../lib/layout.php');
 $style = "../../static/stylesheets/admin/view-lecturers.css";
 
 require_once('../../modules/Lecturer.php');
+require_once('../../modules/Course.php');
 
 $lecturers = Lecturer::getLecturers();
+
+var_dump(Course::getLecturerCourses(1));
 
 ?>
 
@@ -16,21 +19,20 @@ $lecturers = Lecturer::getLecturers();
         <th scope="col">Lastname</th>
         <th scope="col">Firstname</th>
         <th scope="col">Department</th>
-        <th scope="col">Course</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
       <?php
-      foreach ($lecturers as $lecturer) {
+      foreach ($lecturers as $k => $lecturer) {
         $view_btn = "<a href='view-lecturer-info.php' class='btn btn-primary'>View</a>";
+        $k = $k + 1;
         $content = <<< EOD
               <tr>
-                <th scope="row">{$lecturer["sn"]}</th>
-                <td>{$lecturer["lastname"]}</td>
-                <td>{$lecturer["firstname"]}</td>
-                <td>{$lecturer["department"]}</td>
-                <td>{$lecturer["course"]}</td>
+                <td scope="row">{$k}</td>
+                <td>{$lecturer["lastName"]}</td>
+                <td>{$lecturer["firstName"]}</td>
+                <td>{$lecturer["departmentName"]}</td>
                 <td>{$view_btn}</td>
               </tr>
               EOD;

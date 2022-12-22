@@ -1,4 +1,3 @@
-# JIPS
 Lecture attendance management system
 
 ## How to run

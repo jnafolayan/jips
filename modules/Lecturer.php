@@ -22,7 +22,8 @@ class Lecturer
     public static function getLecturers()
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT * FROM lecturer");
+        $res = $conn->query("SELECT l.*, d.name AS departmentName FROM lecturer l 
+            LEFT JOIN department d ON l.departmentID = d.id");
         $result = [];
         if ($res->num_rows > 0) {
             while ($row = $res->fetch_assoc()) {
