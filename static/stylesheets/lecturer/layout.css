@@ -9,8 +9,9 @@ body {
 
 .header {
   background-color: #222244;
-  line-height: 4em;
-  padding-left: 1em;
+  padding: 1.2rem 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 #header-text {
@@ -25,18 +26,12 @@ a:hover {
   transition-duration: 0.2s;
 }
 
-.logout {
-  float: right;
-  padding-right: 30px;
-}
-
 .aside {
-  display: flex;
-  justify-content: center;
+  width: 300px;
   text-align: start;
   background-color: #222244;
-  height: 100%;
-  padding-top: 5%;
+  height: 100vh;
+  padding: 1rem 1.2rem;
 }
 
 ul {
@@ -64,20 +59,24 @@ ul li a:hover {
   margin-right: 0;
   width: 100%;
   max-width: 100%;
-  height: 100vh;
+}
+
+.content-row {
+  display: flex;
+  height: calc(100vh - 77px);
 }
 
 /* If this style block causes issues in your layout simply make a .wrapper class for your layout and put
 your content inside that wrapper, then let that wrapper be a direct child of the container using this class */
 .main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
+  overflow-y: auto;
+  height: 100%;
+  padding: 10px;
+  width: calc(100vw - 300px);
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
