@@ -7,8 +7,6 @@ require_once('../../modules/Course.php');
 
 $lecturers = Lecturer::getLecturers();
 
-var_dump(Course::getLecturerCourses(1));
-
 ?>
 
 <div class="wrapper">
