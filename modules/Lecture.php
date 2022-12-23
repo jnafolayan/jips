@@ -79,11 +79,11 @@ class Lecture
     public static function getLecturesForLecturer($lecturerID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT * FROM 
+        $res = $conn->query("SELECT course.*, lecture.* FROM 
             (SELECT l.* FROM lecturerCourse lc 
-            LEFT JOIN lecture l ON l.courseID = lc.courseID 
-            WHERE lecturerID='$lecturerID' AND l.id IS NOT NULL) AS lectures
-            LEFT JOIN course ON course.id = lectures.courseID");
+            LEFT JOIN lecture l ON lc.courseID = l.courseID 
+            WHERE lc.lecturerID='$lecturerID' AND l.id IS NOT NULL) AS lecture
+            LEFT JOIN course ON lecture.courseID = course.id");
 
         $result = [];
         if ($res->num_rows > 0) {
