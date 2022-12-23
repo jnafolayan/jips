@@ -53,11 +53,13 @@ if (isset($_POST["signin"])) {
       <input type="submit" value="Sign in" name="signin" class="btn btn-primary" />
 
       <?php
-        if ($loginError) {
-          echo "<p class='text-danger'>$loginError</p>";
-        }
-        ?>
+      if ($loginError) {
+        echo "<p class='text-danger'>$loginError</p>";
+      }
+      ?>
     </form>
+
+    <p class="mt-4">Are you an admin? <a href="/views/admin/admin-login.php">Log in here</a></p>
   </div>
 
 
