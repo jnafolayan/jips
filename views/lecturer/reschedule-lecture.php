@@ -4,8 +4,8 @@ require_once('../../modules/Course.php');
 $title = "Reschedule Lecture";
 $style = "../../static/stylesheets/index.css";
 
-$fakeId = 2;
-$courses = Course::getLecturerCourses($fakeId);
+$lecturerID = $_SESSION['user']['id'];
+$courses = Course::getLecturerCourses($lecturerID);
 
 
     ?>

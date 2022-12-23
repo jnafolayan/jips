@@ -1,8 +1,10 @@
 <?php
+require_once('./partials/session.php');
+
 require_once('../../lib/layout.php');
 require_once('../../modules/Lecture.php');
 
-$lecturerID = 2;
+$lecturerID = $_SESSION['user']['id'];
 $lectures = Lecture::getLecturesForLecturer($lecturerID);
 
 // $timeMap = [

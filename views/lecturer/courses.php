@@ -1,11 +1,12 @@
 <?php
+require_once('./partials/session.php');
 require_once('../../lib/layout.php');
 require_once('../../modules/Course.php');
 $title = "Courses";
 $style = "../../static/stylesheets/index.css";
 
-$fakeId = 2;
-$courses = Course::getLecturerCourses($fakeId);
+$lecturerID = $_SESSION['user']['id'];
+$courses = Course::getLecturerCourses($lecturerID);
 
 if(count($courses) === 0){
   echo "<div class='d-flex align-items-center justify-content-center pt-4'>

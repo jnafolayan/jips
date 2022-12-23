@@ -1,5 +1,7 @@
 
   <?php
+require_once('./partials/session.php');
+
 require_once('../../lib/layout.php');
 $title = "Lecture";
 $link = '';
