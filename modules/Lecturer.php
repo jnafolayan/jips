@@ -45,6 +45,17 @@ class Lecturer
         return null;
     }
 
+    public static function getLecturerByID($id)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("SELECT l.*, d.name AS departmentName FROM lecturer l 
+        LEFT JOIN department d ON l.departmentID = d.id WHERE l.id='$id'");
+        if ($res->num_rows > 0) {
+            return $res->fetch_assoc();
+        }
+        return null;
+    }
+
     public static function updateLecturerByEmployeeID($employeeID, $title, $firstName, $lastName, $departmentID)
     {
         $conn = DB::getConnection();

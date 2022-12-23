@@ -33,6 +33,18 @@ class Lecture
         return null;
     }
 
+    public static function getLectureByID($lectureID)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("SELECT * FROM lecture WHERE id='$lectureID'");
+
+        if ($res->num_rows > 0) {
+            return $res->fetch_assoc();
+        }
+
+        return null;
+    }
+
     public static function getLecturesForLecturer($lecturerID)
     {
         $conn = DB::getConnection();
