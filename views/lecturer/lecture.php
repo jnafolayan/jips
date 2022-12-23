@@ -52,12 +52,11 @@ if(isset($_GET['lecture_id'])){
         <form action='' method='post' class='d-flex gap-3'>
           <input class='btn btn-success' name='action' type='submit' value='Start Lecture' />
           <input class='btn btn-danger' name='action' type='submit' value='End Lecture' />
-          <button
+          <a
             class='btn btn-dark d-flex'
-            data-bs-toggle='modal'
-            data-bs-target='#exampleModal'
-            href='#'
-            >Reschedule Lecture</button
+
+            href='reschedule-lecture.php?lecture_id=". $_GET['lecture_id'] ."'
+            >Reschedule Lecture</a
           >
 
         </form>

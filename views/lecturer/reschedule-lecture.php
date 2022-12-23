@@ -1,11 +1,30 @@
 <?php
 require_once('../../lib/layout.php');
 require_once('../../modules/Course.php');
+require_once('../../modules/Request.php');
 $title = "Reschedule Lecture";
 $style = "../../static/stylesheets/index.css";
+$mess ;
 
-$lecturerID = $_SESSION['user']['id'];
-$courses = Course::getLecturerCourses($lecturerID);
+if(!isset($_GET['lecture_id'])){
+    header('location: /views/not-found.php');
+}
+
+if(isset($_POST['submit'])){
+    $newDay = $_POST['day'];
+    $startTime = $_POST['start-time'];
+    $endTime = $_POST['end-time'];
+
+    $res = Request::createRequest($_GET['lecture_id'], $newDay, $startTime, $endTime);
+
+    echo $res;
+    if($res){
+
+        echo "<script>alert('Request submitted successfully')</script>";
+        header('location: lectures.php');
+
+    }
+}
 
 
     ?>
@@ -20,7 +39,6 @@ $courses = Course::getLecturerCourses($lecturerID);
           <h1 class='fs-5' id='exampleModalLabel'>
             Reschedule Lecture
           </h1>
-          
         </div>
       
           <form method='post' class='d-flex gap-4 flex-column lecture-form'>
