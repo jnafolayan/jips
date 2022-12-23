@@ -10,7 +10,7 @@ if (isset($_POST["signin"])) {
 
   $result = Auth::lecturerSignIn($lecturerID, $password);
   if ($result) {
-    header('location:view-lectures.php');
+    header('location:lectures.php');
   } else {
     $loginError = 'Unable to sign in';
   }

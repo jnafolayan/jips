@@ -27,7 +27,7 @@ a:hover {
 }
 
 .aside {
-  width: 300px;
+  width: 250px;
   text-align: start;
   background-color: #222244;
   height: 100vh;
@@ -72,7 +72,7 @@ your content inside that wrapper, then let that wrapper be a direct child of the
   overflow-y: auto;
   height: 100%;
   padding: 10px;
-  width: calc(100vw - 300px);
+  width: calc(100vw - 250px);
 }
 
 ::-webkit-scrollbar {

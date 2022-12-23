@@ -26,53 +26,56 @@ if (isset($_POST['submit'])) {
 ?>
 
 
-<h1 id="form-title">Add New Lecturer</h1>
-<?php
+<div class="wrapper">
+    <h1 id="form-title">Add New Lecturer</h1>
+    <?php
 if ($submitError) {
     echo "<p class='text-danger'>$submitError</p>";
 }
 ?>
-<form id="new-lecturer-form" class="row" method="POST">
-    <div class="mb-3 col-md-2">
-        <label for="Title" class="form-label">Title</label>
-        <select class="form-select" name="title" id="title" required>
-            <?php
+    <form id="new-lecturer-form" class="row" method="POST">
+        <div class="mb-3 col-md-2">
+            <label for="Title" class="form-label">Title</label>
+            <select class="form-select" name="title" id="title" required>
+                <?php
             foreach ($titles as $title) {
                 echo "<option value='$title'>{$title}</option>";
             }
             ?>
-        </select>
-    </div>
+            </select>
+        </div>
 
-    <div class="mb-3 col-md-5">
-        <label for="lastName" class="form-label">Lastname</label>
-        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Lastname" required>
-    </div>
+        <div class="mb-3 col-md-5">
+            <label for="lastName" class="form-label">Lastname</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Lastname" required>
+        </div>
 
-    <div class="mb-3 col-md-5">
-        <label for="firstName" class="form-label">Firstname</label>
-        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Firstname" required>
-    </div>
+        <div class="mb-3 col-md-5">
+            <label for="firstName" class="form-label">Firstname</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Firstname" required>
+        </div>
 
-    <div class="mb-3 col-md-6">
-        <label for="employeeID" class="form-label">Employee ID</label>
-        <input type="text" class="form-control" id="employeeID" name="employeeID" placeholder="Employee ID" required>
-    </div>
+        <div class="mb-3 col-md-6">
+            <label for="employeeID" class="form-label">Employee ID</label>
+            <input type="text" class="form-control" id="employeeID" name="employeeID" placeholder="Employee ID"
+                required>
+        </div>
 
-    <div class="mb-3 col-md-6">
-        <label for="department" class="form-label">Department</label>
-        <select class="form-select" name="department" id="department">
-            <?php
+        <div class="mb-3 col-md-6">
+            <label for="department" class="form-label">Department</label>
+            <select class="form-select" name="department" id="department">
+                <?php
             foreach ($departments as $dept) {
                 $deptID = $dept['id'];
                 $deptName = $dept['name'];
                 echo "<option value='$deptID'>{$deptName}</option>";
             }
             ?>
-        </select>
-    </div>
+            </select>
+        </div>
 
-    <div class="col-md-12">
-        <input type="submit" name="submit" class="btn btn-success" id="submit-btn" value="Add Lecturer" />
-    </div>
-</form>
+        <div class="col-md-12">
+            <input type="submit" name="submit" class="btn btn-success" id="submit-btn" value="Add Lecturer" />
+        </div>
+    </form>
+</div>

@@ -21,8 +21,16 @@ h1 {
   padding: 2rem;
 }
 
-.lectures .row .col:nth-child(1) {
+/* .lectures .row .col:nth-child(1) {
   border-right: 0.05px solid #ccc;
+} */
+
+.lectures .row .col {
+  border-right: 0.05px solid #ccc;
+}
+
+.lectures .row .col:last-child {
+  border-right: none;
 }
 
 .lectures .row {
@@ -43,6 +51,14 @@ h1 {
 
 .card-link {
   font-size: 12px;
+}
+
+.new-row .col:first-child{
+  text-transform: capitalize;
+}
+
+.new-row .col:nth-child(4){
+  text-transform: uppercase;
 }
 
 /* Modal */
@@ -110,6 +126,20 @@ h1 {
   margin-top: 1rem;
 }
 
+.card-text, .course 
+.info p, .course h1, .lecturers{
+  text-transform: capitalize;
+}
+
+.card-title, .course 
+.info > div:first-child > p{
+  text-transform: uppercase;
+}
+
+.not-found{
+  font-weight: 600;
+  font-size: 1.3rem;
+}
 /* Course & Lecture */
 
 .info h6 {
@@ -174,7 +204,7 @@ h1 {
 /* Profile */
 
 .picture {
-  width: 300px;
+  width: 250px;
   height: 300px;
 }
 
