@@ -4,6 +4,11 @@ require_once('../../lib/layout.php');
 $title = "Lecture";
 $style = "../../static/stylesheets/index.css";
 
+if(isset($_POST['action'])){
+  //change state to started
+  //redirect attendace.php?lecture=ledtureid
+  //on attendance page check if state is true
+}
 
 ?>
     <div
@@ -40,11 +45,11 @@ $style = "../../static/stylesheets/index.css";
               </div>
               <div>
                 <label for="start-time">Start Time</label><br />
-                <input class="form-control" type="time" name="start-time" id="start-time" required step="3600000" min="09:00" max="17:00"/>
+                <input class="form-control" type="time" name="start-time" id="start-time" required step="3600" min="09:00" max="17:00"/>
               </div>
               <div>
                 <label for="end-time">End Time</label><br />
-                <input class="form-control" type="time" name="end-time" id="end-time" required step="3600000" min="10:00" max="18:00"/>
+                <input class="form-control" type="time" name="end-time" id="end-time" required step="3600" min="10:00" max="18:00"/>
               </div>
               <div class="d-flex align-items-center gap-2">
                 <input type="checkbox" name="recurring" />
@@ -76,16 +81,18 @@ $style = "../../static/stylesheets/index.css";
           <h6>Period</h6>
           <p>Monday 8:00 - 9:00</p>
 
-          <a class="btn btn-success" href="">Start Lecture</a>
-          <a class="btn btn-danger" href="">End Lecture</a>
-          <a class="btn btn-primary" href="">Generate Registration Link</a>
-          <a
-            class="btn btn-dark"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-            href="#"
-            >Reschedule Lecture</a
-          >
+          <form action="" class="d-flex gap-3">
+            <input class="btn btn-success" name="action" type="submit" value="Start Lecture" />
+            <input class="btn btn-danger" name="action" type="submit" value="End Lecture" />
+            <button
+              class="btn btn-dark d-flex"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              href="#"
+              >Reschedule Lecture</button
+            >
+
+          </form>
         </div>
       </div>
 
