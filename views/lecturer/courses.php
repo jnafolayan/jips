@@ -16,6 +16,12 @@ if(count($courses) === 0){
 }else{
   $ele = "";
   foreach ($courses as $course) {
+    $lecturers = Course::getAssignedLecturers($course['id']);
+    $lecturerNames = [];
+    foreach ($lecturers as $l) {
+      array_push($lecturerNames, $l['firstName'] . ' ' . $l['lastName']);
+    }
+
     $ele .= "
     <div class='course-card shadow-sm'>
     <div class='img'>
@@ -25,7 +31,7 @@ if(count($courses) === 0){
     <h5 class='card-title'>" . $course['code'] . "</h5>
     <p class='card-text'>" . $course['title'] . "</p>
     
-    <p>Lecturers: <span class='lecturers'>" . join(", ",['ike', 'are']) . "</span></p>
+    <p>Lecturers: <span class='lecturers'>" . join(', ', $lecturerNames). "</span></p>
     <a href=". 'course.php?course_id=' . $course['id'] . " class='btn btn-dark'>View Course</a>
     </div>
     </div>
