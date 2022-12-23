@@ -1,19 +1,10 @@
 <?php
 require_once('../../lib/layout.php');
+require_once('../../modules/Lecture.php');
+
 $style = "../../static/stylesheets/admin/view-lectures.css";
 
-$lectures = [];
-for ($i = 1; $i < 21; $i++) {
-  $lecture = [
-    "sn" => "{$i}",
-    "course" => "Course_Code",
-    "day" => "Day",
-    "start_time" => "Start-Time",
-    "end_time" => "End-Time",
-  ];
-
-  array_push($lectures, $lecture);
-}
+$lectures = Lecture::getLectures();
 ?>
 
 <div class="wrapper">
@@ -30,15 +21,17 @@ for ($i = 1; $i < 21; $i++) {
     </thead>
     <tbody>
       <?php
-      foreach ($lectures as $lecture) {
-        $view_btn = "<a href='view-lecture-info.php' class='btn btn-primary'>View</a>";
+      foreach ($lectures as $k => $lecture) {
+        $i = $k + 1;
+        $lID = $lecture['id'];
+        $view_btn = "<a href='view-lecture-info.php?id=$lID' class='btn btn-primary'>View</a>";
         $content = <<< EOD
               <tr>
-                <td scope="row">{$lecture["sn"]}</td>
-                <td>{$lecture["course"]}</td>
+                <td scope="row">{$i}</td>
+                <td>{$lecture["title"]}</td>
                 <td>{$lecture["day"]}</td>
-                <td>{$lecture["start_time"]}</td>
-                <td>{$lecture["end_time"]}</td>
+                <td>{$lecture["startTime"]}</td>
+                <td>{$lecture["endTime"]}</td>
                 <td>{$view_btn}</td>
               </tr>
               EOD;

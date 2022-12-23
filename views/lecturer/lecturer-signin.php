@@ -14,6 +14,9 @@ if (isset($_POST["signin"])) {
 
     $_SESSION['user'] = $result['user'];
     $_SESSION['role'] = $result['role'];
+    if ($result['user']['isHOD']) {
+      $_SESSION['role'] = 'hod';
+    }
 
     header('location:lectures.php');
   } else {

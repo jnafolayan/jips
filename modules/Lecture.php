@@ -33,10 +33,27 @@ class Lecture
         return null;
     }
 
+    public static function updateLectureByID($lectureID, $day, $startTime, $endTime)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("UPDATE lecture SET day='$day', startTime='$startTime', endTime='$endTime' 
+        WHERE id='$lectureID'");
+        return $res;
+    }
+
+    public static function deleteLectureByID($lectureID)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("DELETE FROM lecture WHERE id='$lectureID'");
+        return $res;
+    }
+
     public static function getLectureByID($lectureID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT * FROM lecture WHERE id='$lectureID'");
+        $res = $conn->query("SELECT l.id AS id, l.*, c.* FROM lecture l 
+        LEFT JOIN course c ON l.courseID = c.id 
+        WHERE l.id='$lectureID'");
 
         if ($res->num_rows > 0) {
             return $res->fetch_assoc();
@@ -48,7 +65,9 @@ class Lecture
     public static function getLectureByCourseID($courseID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT * FROM lecture WHERE courseID='$courseID'");
+        $res = $conn->query("SELECT l.id AS id, l.*, c.* FROM lecture l 
+        LEFT JOIN course c ON l.courseID = c.id 
+        WHERE l.courseID='$courseID'");
 
         if ($res->num_rows > 0) {
             return $res->fetch_assoc();
@@ -65,6 +84,21 @@ class Lecture
             LEFT JOIN lecture l ON l.courseID = lc.courseID 
             WHERE lecturerID='$lecturerID' AND l.id IS NOT NULL) AS lectures
             LEFT JOIN course ON course.id = lectures.courseID");
+
+        $result = [];
+        if ($res->num_rows > 0) {
+            while ($row = $res->fetch_assoc()) {
+                array_push($result, $row);
+            }
+        }
+
+        return $result;
+    }
+
+    public static function getLectures()
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("SELECT l.id AS id, l.*, c.* FROM lecture l LEFT JOIN course c ON l.courseID = c.id");
 
         $result = [];
         if ($res->num_rows > 0) {
