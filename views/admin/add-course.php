@@ -53,24 +53,24 @@ if ($submitError) {
         <select class="form-select" name="department" id="department" required>
             <option value="" selected> Select an option</option>
             <?php
-      foreach ($departments as $dept) {
-          $id = $dept['id'];
-          $name = $dept['name'];
-          echo "<option value='$id'>$name</option>";
-      }
-      ?>
+            foreach ($departments as $dept) {
+                $id = $dept['id'];
+                $name = $dept['name'];
+                echo "<option value='$id'>$name</option>";
+            }
+            ?>
         </select>
     </div>
 
     <div class="mb-3">
-    <label for="level">Level</label>
-    <select name="level" id="level" class="form-select">
-        <option value="100">100</option>
-        <option value="200">200</option>
-        <option value="300">300</option>
-        <option value="400">400</option>
-        <option value="500">500</option>
-    </select>
+        <label for="level">Level</label>
+        <select name="level" id="level" class="form-select">
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+            <option value="500">500</option>
+        </select>
     </div>
 
     <div class="mb-3">
@@ -78,12 +78,12 @@ if ($submitError) {
         <select class="form-select" name="lecturers[]" id="lecturers" multiple>
             <option value="" selected> Select an option</option>
             <?php
-      foreach ($lecturers as $lecturer) {
-          $id = $lecturer['id'];
-          $fullName = $lecturer['firstName'] . ' ' . $lecturer['lastName'];
-          echo "<option value='$id'>$fullName</option>";
-      }
-      ?>
+            foreach ($lecturers as $lecturer) {
+                $id = $lecturer['id'];
+                $fullName = $lecturer['firstName'] . ' ' . $lecturer['lastName'];
+                echo "<option value='$id'>$fullName</option>";
+            }
+            ?>
         </select>
     </div>
 

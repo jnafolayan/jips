@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `lecturer` (
     passwordHash VARCHAR(255) NOT NULL,
     firstName VARCHAR(255) NOT NULL,
     lastName VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NULL,
     departmentID INT UNSIGNED,
     createdAt DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     PRIMARY KEY(id),

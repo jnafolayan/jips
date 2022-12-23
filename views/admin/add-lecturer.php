@@ -1,52 +1,78 @@
 <?php
 require_once('../../lib/layout.php');
 $style = "../../static/stylesheets/admin/add-lecturer.css";
-$lecturers = ["Lecturer 1", "Lecturer 2", "Lecturer 3", "Lecturer 4", "Lecturer 5"];
-$courses = ["Course 1", "Course 2", "Course 3", "Course 4", "Course 5"];
+
+require_once('../../modules/Lecturer.php');
+require_once('../../modules/Department.php');
+
 $titles = ["Mr.", "Mrs.", "Miss", "Dr.", "Professor"];
+$departments = Department::getDepartments();
+$submitError = null;
+
+if (isset($_POST['submit'])) {
+    $title = $_POST['title'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $employeeID = $_POST['employeeID'];
+    $departmentID = $_POST['department'];
+
+    $result = Lecturer::createLecturer($employeeID, $title, $firstName, $lastName, $departmentID);
+    if ($result !== false) {
+        header('location: view-lecturers.php');
+    } else {
+        $submitError = 'Unable to create new lecturer.';
+    }
+}
 ?>
 
 
 <h1 id="form-title">Add New Lecturer</h1>
-<form id="new-lecturer-form" class="row">
-  <div class="mb-3 col-md-2">
-    <label for="Title" class="form-label">Title</label>
-    <select class="form-select" name="title" id="title">
-      <?php
-      for ($i = 0; $i < sizeof($courses); $i++) {
-        echo "<option value='title.id'>{$titles[$i]}</option>";
-      }
-      ?>
-    </select>
-  </div>
+<?php
+if ($submitError) {
+    echo "<p class='text-danger'>$submitError</p>";
+}
+?>
+<form id="new-lecturer-form" class="row" method="POST">
+    <div class="mb-3 col-md-2">
+        <label for="Title" class="form-label">Title</label>
+        <select class="form-select" name="title" id="title" required>
+            <?php
+            foreach ($titles as $title) {
+                echo "<option value='$title'>{$title}</option>";
+            }
+            ?>
+        </select>
+    </div>
 
-  <div class="mb-3 col-md-5">
-    <label for="lastname" class="form-label">Lastname</label>
-    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Lastname">
-  </div>
+    <div class="mb-3 col-md-5">
+        <label for="lastName" class="form-label">Lastname</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Lastname" required>
+    </div>
 
-  <div class="mb-3 col-md-5">
-    <label for="firstname" class="form-label">Firstname</label>
-    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Firstname">
-  </div>
+    <div class="mb-3 col-md-5">
+        <label for="firstName" class="form-label">Firstname</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Firstname" required>
+    </div>
 
-  <div class="mb-3 col-md-12">
-    <label for="department" class="form-label">Department</label>
-    <input type="text" class="form-control" id="department" name="department" placeholder="Department">
-  </div>
+    <div class="mb-3 col-md-6">
+        <label for="employeeID" class="form-label">Employee ID</label>
+        <input type="text" class="form-control" id="employeeID" name="employeeID" placeholder="Employee ID" required>
+    </div>
 
-  <div class="mb-3 col-md-12">
-    <label for="lecturer">Course</label>
-    <select class="form-select" name="lecturer" id="lecturer">
-      <?php
-      for ($i = 0; $i < sizeof($courses); $i++) {
-        echo "<option value='lecturer.id'>{$courses[$i]}</option>";
-      }
-      ?>
-    </select>
-  </div>
+    <div class="mb-3 col-md-6">
+        <label for="department" class="form-label">Department</label>
+        <select class="form-select" name="department" id="department">
+            <?php
+            foreach ($departments as $dept) {
+                $deptID = $dept['id'];
+                $deptName = $dept['name'];
+                echo "<option value='$deptID'>{$deptName}</option>";
+            }
+            ?>
+        </select>
+    </div>
 
-  <div class="col-md-12">
-    <button type="submit" class="btn btn-success" id="submit-btn">Add Lecturer</button>
-  </div>
+    <div class="col-md-12">
+        <input type="submit" name="submit" class="btn btn-success" id="submit-btn" value="Add Lecturer" />
+    </div>
 </form>

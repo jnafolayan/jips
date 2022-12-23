@@ -23,6 +23,14 @@ class Course
         return null;
     }
 
+    public static function updateCourse($courseID, $code, $title, $departmentID, $level)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("UPDATE course SET code='$code', title='$title', departmentID='$departmentID', level='$level' WHERE id='$courseID'");
+
+        return $res;
+    } 
+
     public static function deleteCourse($courseID)
     {
         $conn = DB::getConnection();

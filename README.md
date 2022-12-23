@@ -11,15 +11,15 @@ php -S localhost:8080
 ### Admin
 [ ] http://localhost:8080/views/admin/admin.php  
 [x] http://localhost:8080/views/admin/add-course.php  
-[ ] http://localhost:8080/views/admin/add-lecture.php  
-[ ] http://localhost:8080/views/admin/add-lecturer.php  
+[x] http://localhost:8080/views/admin/add-lecture.php  
+[x] http://localhost:8080/views/admin/add-lecturer.php  
 [x] http://localhost:8080/views/admin/edit-course-info.php  
 [ ] http://localhost:8080/views/admin/edit-lecturer-info.php  
 [x] http://localhost:8080/views/admin/delete-course.php  
 [x] http://localhost:8080/views/admin/view-course-info.php  
 [x] http://localhost:8080/views/admin/view-courses.php  
 [ ] http://localhost:8080/views/admin/view-lecturer-info.php  
-[ ] http://localhost:8080/views/admin/view-lecturers.php  
+[x] http://localhost:8080/views/admin/view-lecturers.php  
 [ ] http://localhost:8080/views/admin/view-reschedule-request-info.php  
 [ ] http://localhost:8080/views/admin/view-reschedule-requests.php  
 

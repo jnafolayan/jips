@@ -23,7 +23,8 @@ $lecturers = Lecturer::getLecturers();
     <tbody>
       <?php
       foreach ($lecturers as $k => $lecturer) {
-        $view_btn = "<a href='view-lecturer-info.php' class='btn btn-primary'>View</a>";
+        $eid = $lecturer["employeeID"];
+        $view_btn = "<a href='view-lecturer-info.php?eid=$eid' class='btn btn-primary'>View</a>";
         $k = $k + 1;
         $content = <<< EOD
               <tr>
