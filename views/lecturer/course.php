@@ -6,9 +6,18 @@ $style = "../../static/stylesheets/index.css";
 
 if(isset($_GET['course_id'])){
   $course = Course::getCourseByID($_GET['course_id']);
+  $lecturers = Course::getAssignedLecturers($_GET['course_id']);
+
 
   if(isset($course)){
+$el = '';
+foreach($lecturers as $lecturer){
 
+  $el .=  "<div class='d-flex justify-content-between align-items-center'>
+  <p>". $lecturer['title'] . " " . $lecturer['firstName'] . " " . $lecturer['lastName']  ."</p>
+  <a class='btn btn-primary' href='lecturer-profile.php?lecturer_id=" . $lecturer['id'] . "'>View Profile</a>
+</div>";
+}
     echo "<div class='course container'>
       <h1>" . $course['title'] . "</h1>
     
@@ -36,19 +45,8 @@ if(isset($_GET['course_id'])){
         <div>
           <h6>Lecturers</h6>
     
-          <div class='d-flex gap-3 flex-column'>
-            <div class='d-flex justify-content-between align-items-center'>
-              <p>Ikeoluwapo Are</p>
-              <a class='btn btn-primary' href='profile.html'>View Profile</a>
-            </div>
-            <div class='d-flex justify-content-between align-items-center'>
-              <p>Ikeoluwapo Are</p>
-              <a class='btn btn-primary' href=''>View Profile</a>
-            </div>
-            <div class='d-flex justify-content-between align-items-center'>
-              <p>Ikeoluwapo Are</p>
-              <a class='btn btn-primary' href=''>View Profile</a>
-            </div>
+          <div class='d-flex gap-3 flex-column'>" . $el ."
+            
           </div>
         </div>
       </div>
