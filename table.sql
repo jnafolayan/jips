@@ -60,6 +60,8 @@ CREATE TABLE IF NOT EXISTS `lecture` (
     endTime VARCHAR(10) NOT NULL,
     status VARCHAR(25) DEFAULT 'pending',
     isHOD BOOLEAN DEFAULT 0,
+    startedDateTime DATETIME(6) NULL,
+    endedDateTime DATETIME(6) NULL,
     createdAt DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     updatedAt DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     PRIMARY KEY(id),
