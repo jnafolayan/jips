@@ -37,9 +37,9 @@ class Lecture
     {
         $conn = DB::getConnection();
         $res = $conn->query("SELECT * FROM 
-            (SELECT l.* FROM lectureCourse lc 
-            LEFT JOIN lecture l ON lecture.courseID = lc.courseID 
-            WHERE lecturerID='$lecturerID') AS lectures
+            (SELECT l.* FROM lecturerCourse lc 
+            LEFT JOIN lecture l ON l.courseID = lc.courseID 
+            WHERE lecturerID='$lecturerID' AND l.id IS NOT NULL) AS lectures
             LEFT JOIN course ON course.id = lectures.courseID");
 
         $result = [];

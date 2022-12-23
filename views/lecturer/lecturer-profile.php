@@ -2,6 +2,12 @@
 require_once('../../lib/layout.php');
 $title = "Lecturer Profile";
 $style = "../../static/stylesheets/index.css";
+require_once('../../modules/Lecturer.php');
+
+$fakeId = 1;
+$lect = Lecturer::getLecturerByEmployeeID($fakeId);
+
+var_dump($lect);
 
 $lecturer = [
   'lecturer_id' => 1236778,

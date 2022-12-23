@@ -9,8 +9,6 @@ require_once('../../modules/Lecture.php');
 $courses = Course::getCourses();
 $submitError = null;
 
-var_dump(Course::getLecturerCourses(1));
-
 if (isset($_POST['submit'])) {
     $courseID = $_POST['courseID'];
     $day = $_POST['day'];
