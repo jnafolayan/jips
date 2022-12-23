@@ -33,6 +33,18 @@ class Lecture
         return null;
     }
 
+    public static function getLectureByID($lectureID)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("SELECT * FROM lecture WHERE id='$lectureID'");
+
+        if ($res->num_rows > 0) {
+            return $res->fetch_assoc();
+        }
+
+        return null;
+    }
+
     public static function getLecturesForLecturer($lecturerID)
     {
         $conn = DB::getConnection();
@@ -50,6 +62,20 @@ class Lecture
         }
 
         return $result;
+    }
+
+    public static function startLecture($lectureID)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("UPDATE lecture SET status='started' WHERE id='$lectureID'");
+        return $res;
+    }
+
+    public static function endLecture($lectureID)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("UPDATE lecture SET status='ended' WHERE id='$lectureID'");
+        return $res;
     }
 }
 

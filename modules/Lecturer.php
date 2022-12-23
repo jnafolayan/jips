@@ -19,6 +19,13 @@ class Lecturer
         return false;
     }
 
+    public static function makeLecturerHOD($lecturerID)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("UPDATE lecturer SET isHod=1 WHERE id='$lecturerID'");
+        return $res;
+    }
+
     public static function getLecturers()
     {
         $conn = DB::getConnection();
@@ -39,6 +46,17 @@ class Lecturer
         $conn = DB::getConnection();
         $res = $conn->query("SELECT l.*, d.name AS departmentName FROM lecturer l 
         LEFT JOIN department d ON l.departmentID = d.id WHERE employeeID='$eid'");
+        if ($res->num_rows > 0) {
+            return $res->fetch_assoc();
+        }
+        return null;
+    }
+
+    public static function getLecturerByID($id)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("SELECT l.*, d.name AS departmentName FROM lecturer l 
+        LEFT JOIN department d ON l.departmentID = d.id WHERE l.id='$id'");
         if ($res->num_rows > 0) {
             return $res->fetch_assoc();
         }
