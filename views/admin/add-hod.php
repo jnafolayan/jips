@@ -10,35 +10,40 @@ $style = "../../static/stylesheets/admin/add-course.css";
 
 $lecturers = Lecturer::getLecturers();
 $departments = Department::getDepartments();
+$mess = '';
+if(isset($_POST['lecturer']) && isset($_POST['department'])){
+    $res = Lecturer::makeLecturerHOD($_POST['lecturer']);
 
-$submitError = null;
-
-if (isset($_POST["submit"])) {
-  $courseCode = $_POST["courseCode"];
-  $courseTitle = $_POST["courseTitle"];
-  $departmentID = $_POST["department"];
-  $level = $_POST["level"];
-  $lecturerIDs = $_POST["lecturers"];
-
-  $result = Course::createCourse($courseCode, $courseTitle, $departmentID, $level, $lecturerIDs);
-  if ($result != null) {
-    header('location:view-courses.php');
-  } else {
-    $submitError = 'Unable to create course.';
-  }
+    if($res){
+        $mess .= "<p class='text-success'> Lecturer is now an HOD</p>";
+    }
 }
+
 ?>
 
 
-<div class="wrapper">
-  <select name="lecturer" id="">
+<form method='post' class="wrapper">
     <?php
-foreach($lecturers as $lecturer){
-    echo "<option value="$lecturer["></option>";
+        echo $mess;
+    ?>
+    <label for="department">Departments</label>
+<select class='form-select' name="department" id="department">
+    <?php
+foreach($departments as $department){
+    echo "<option value='" . $department['id'] . "'> " . $department['name'] . "</option>";
     
 }
     ?>
   </select>
-    <input type="submit" name="submit" class="btn btn-success" id="submit-btn" value="Add Course" />
+  <label for="lecturer">Lecturers</label>
+  <select class='form-select' name="lecturer" id="lecturer">
+    <?php
+foreach($lecturers as $lecturer){
+    echo "<option value='" . $lecturer['id'] . "'> " . $lecturer['firstName'] . " " . $lecturer['lastName'] . "</option>";
+    
+}
+    ?>
+  </select>
+    <input type="submit" name="submit" class="btn btn-success mt-4" id="submit-btn" value="Submit" />
   </form>
 </div>
