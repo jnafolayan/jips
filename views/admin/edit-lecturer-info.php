@@ -10,7 +10,7 @@ $titles = ["Mr.", "Mrs.", "Miss", "Dr.", "Professor"];
 $eid = isset($_GET['eid']) ? $_GET['eid'] : null;
 $lecturer = Lecturer::getLecturerByEmployeeID($eid);
 if (!$lecturer) {
-  header('location: /not-found.php');
+  header('location: /views/not-found.php');
 }
 
 $departments = Department::getDepartments();

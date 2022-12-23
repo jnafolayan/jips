@@ -9,7 +9,7 @@ require_once('../../modules/Department.php');
 $code = isset($_GET['code']) ? $_GET['code'] : null;
 $course = Course::getCourseByCode($code);
 if (!$course) {
-    header('location: /not-found.php');
+    header('location: /views/not-found.php');
 }
 
 $courseID = $course["id"];

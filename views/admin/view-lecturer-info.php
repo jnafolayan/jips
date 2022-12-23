@@ -12,7 +12,7 @@ if (!isset($_GET['eid'])) {
 
 $lecturer = Lecturer::getLecturerByEmployeeID($_GET['eid']);
 if ($lecturer === false) {
-  header('location: /not-found.php');
+  header('location: /views/not-found.php');
 }
 
 $assignedCourses = Course::getLecturerCourses($lecturer['id']);
