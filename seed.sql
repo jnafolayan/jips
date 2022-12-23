@@ -11,4 +11,6 @@ INSERT INTO `course` (code, title, departmentID, level) VALUES ('CSC 433', 'Intr
 INSERT INTO `lecturer` (employeeID, title, passwordHash, firstName, lastName, email, departmentID)
     VALUES (1010, 'Mr.', 'password', 'John', 'Doe', 'j@gmail.com', 1);
 INSERT INTO `lecturer` (employeeID, title, passwordHash, firstName, lastName, email, departmentID)
-    VALUES (1011, 'Mrs.' 'password', 'Ike', 'Are', 'i@gmail.com', 1);
+    VALUES (1011, 'Mrs.', 'password', 'Ike', 'Are', 'i@gmail.com', 1);
+    
+    INSERT INTO `lecturerCourse` (lecturerID, courseID) VALUES (2, 1);

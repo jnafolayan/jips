@@ -1,12 +1,14 @@
 <?php
 require_once('../../lib/layout.php');
 require_once('../../modules/Course.php');
+require_once('../../modules/Lecture.php');
 $title = "Course Information";
 $style = "../../static/stylesheets/index.css";
 
 if(isset($_GET['course_id'])){
   $course = Course::getCourseByID($_GET['course_id']);
   $lecturers = Course::getAssignedLecturers($_GET['course_id']);
+    $lecture = Lecture::getLectureByCourseID($_GET['course_id']);
 
 
   if(isset($course)){
@@ -15,7 +17,6 @@ foreach($lecturers as $lecturer){
 
   $el .=  "<div class='d-flex justify-content-between align-items-center'>
   <p>". $lecturer['title'] . " " . $lecturer['firstName'] . " " . $lecturer['lastName']  ."</p>
-  <a class='btn btn-primary' href='lecturer-profile.php?lecturer_id=" . $lecturer['id'] . "'>View Profile</a>
 </div>";
 }
     echo "<div class='course container'>
@@ -40,7 +41,7 @@ foreach($lecturers as $lecturer){
         </div>
         <div>
           <h6>Lecture Period</h6>
-          <p>Monday 8:00 - 9:00</p>
+          <p>" . (!isset($lecture) ? 'No Lectures' : "<span class='lecture-period-day'>" . $lecture['day'] . "</span>" . " "  . $lecture['startTime'] . "-" . $lecture['endTime'] )." </span></p>
         </div>
         <div>
           <h6>Lecturers</h6>

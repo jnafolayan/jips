@@ -4,7 +4,7 @@ require_once('../../modules/Course.php');
 $title = "Courses";
 $style = "../../static/stylesheets/index.css";
 
-$fakeId = 1;
+$fakeId = 2;
 $courses = Course::getLecturerCourses($fakeId);
 
 if(count($courses) === 0){

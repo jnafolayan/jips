@@ -2,7 +2,7 @@
 require_once('../../lib/layout.php');
 require_once('../../modules/Lecture.php');
 
-$lecturerID = 1;
+$lecturerID = 2;
 $lectures = Lecture::getLecturesForLecturer($lecturerID);
 
 // $timeMap = [
