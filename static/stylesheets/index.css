@@ -152,6 +152,9 @@ h1 {
 }
 
 /* Lecture */
+.lecture-period-day{
+  text-transform: capitalize;
+}
 
 .lecture .heading {
   margin-bottom: 2.5rem;

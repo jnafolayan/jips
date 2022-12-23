@@ -1,14 +1,24 @@
 <?php
 require_once('../../lib/layout.php');
 require_once('../../modules/Course.php');
+require_once('../../modules/Lecture.php');
 $title = "Course Information";
 $style = "../../static/stylesheets/index.css";
 
 if(isset($_GET['course_id'])){
   $course = Course::getCourseByID($_GET['course_id']);
+  $lecturers = Course::getAssignedLecturers($_GET['course_id']);
+    $lecture = Lecture::getLectureByCourseID($_GET['course_id']);
+
 
   if(isset($course)){
+$el = '';
+foreach($lecturers as $lecturer){
 
+  $el .=  "<div class='d-flex justify-content-between align-items-center'>
+  <p>". $lecturer['title'] . " " . $lecturer['firstName'] . " " . $lecturer['lastName']  ."</p>
+</div>";
+}
     echo "<div class='course container'>
       <h1>" . $course['title'] . "</h1>
     
@@ -31,24 +41,13 @@ if(isset($_GET['course_id'])){
         </div>
         <div>
           <h6>Lecture Period</h6>
-          <p>Monday 8:00 - 9:00</p>
+          <p>" . (!isset($lecture) ? 'No Lectures' : "<span class='lecture-period-day'>" . $lecture['day'] . "</span>" . " "  . $lecture['startTime'] . "-" . $lecture['endTime'] )." </span></p>
         </div>
         <div>
           <h6>Lecturers</h6>
     
-          <div class='d-flex gap-3 flex-column'>
-            <div class='d-flex justify-content-between align-items-center'>
-              <p>Ikeoluwapo Are</p>
-              <a class='btn btn-primary' href='profile.html'>View Profile</a>
-            </div>
-            <div class='d-flex justify-content-between align-items-center'>
-              <p>Ikeoluwapo Are</p>
-              <a class='btn btn-primary' href=''>View Profile</a>
-            </div>
-            <div class='d-flex justify-content-between align-items-center'>
-              <p>Ikeoluwapo Are</p>
-              <a class='btn btn-primary' href=''>View Profile</a>
-            </div>
+          <div class='d-flex gap-3 flex-column'>" . $el ."
+            
           </div>
         </div>
       </div>
