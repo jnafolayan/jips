@@ -17,11 +17,10 @@ if(isset($_POST['submit'])){
 
     $res = Request::createRequest($_GET['lecture_id'], $newDay, $startTime, $endTime);
 
-    echo $res;
     if($res){
 
-        echo "<script>alert('Request submitted successfully')</script>";
-        header('location: lectures.php');
+        echo "<script>alert('Request submitted successfully. Please wait for the admin to review this request')</script>";
+        header('Refresh:2; url=lectures.php');
 
     }
 }
