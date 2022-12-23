@@ -5,5 +5,6 @@
   <li><a href="view-courses.php">View Courses</a></li>
   <li><a href="view-lectures.php">View Lectures</a></li>
   <li><a href="view-lecturers.php">View Lecturers</a></li>
+  <li><a href="add-hod.php">Add HODs</a></li>
   <li><a href="view-reschedule-requests.php">View Reschedule Requests</a></li>
 </ul>
