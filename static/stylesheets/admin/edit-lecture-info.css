@@ -1,10 +1,11 @@
-#new-course-form {
+#lecture-info {
   margin-top: 2%;
   width: 100%;
   max-width: 75%;
 }
 
-#submit-btn {
+#edit-btn,
+#delete-btn {
   width: 100%;
 }
 

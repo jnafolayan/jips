@@ -1,7 +1,6 @@
 .wrapper {
   display: flex;
   overflow-y: auto;
-  height: 90%;
   width: 100%;
   padding-top: 1em;
   margin-right: -1em;
