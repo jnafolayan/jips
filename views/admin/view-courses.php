@@ -1,5 +1,6 @@
 <?php
 require_once('../../lib/layout.php');
+$title = 'View Courses';
 $style = "../../static/stylesheets/admin/view-courses.css";
 
 require_once('../../modules/Course.php');

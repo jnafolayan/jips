@@ -1,7 +1,6 @@
 <?php
-session_start();
-
 require_once('../../lib/layout.php');
+require_once('../../lib/protect.php');
 require_once('../../modules/Department.php');
 require_once('../../modules/Lecturer.php');
 require_once('../../modules/Course.php');

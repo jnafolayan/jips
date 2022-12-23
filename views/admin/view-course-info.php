@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../../lib/layout.php');
+$title = 'View Course';
 $style = "../../static/stylesheets/admin/view-course-info.css";
 $script = "../static/scripts/view-course-info.js";
 

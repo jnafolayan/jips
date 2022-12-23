@@ -1,5 +1,6 @@
 <?php
 require_once('../../lib/layout.php');
+$title = 'Edit Course';
 $style = "../../static/stylesheets/admin/edit-course-info.css";
 
 require_once('../../modules/Course.php');
@@ -9,7 +10,7 @@ require_once('../../modules/Department.php');
 $code = isset($_GET['code']) ? $_GET['code'] : null;
 $course = Course::getCourseByCode($code);
 if (!$course) {
-    header('location: /not-found.php');
+    header('location: /views/not-found.php');
 }
 
 $courseID = $course["id"];

@@ -1,5 +1,6 @@
 <?php
 require_once('../../lib/layout.php');
+$title = 'Edit Lecturer';
 $style = "../../static/stylesheets/admin/edit-lecturer-info.css";
 
 require_once('../../modules/Lecturer.php');
@@ -10,7 +11,7 @@ $titles = ["Mr.", "Mrs.", "Miss", "Dr.", "Professor"];
 $eid = isset($_GET['eid']) ? $_GET['eid'] : null;
 $lecturer = Lecturer::getLecturerByEmployeeID($eid);
 if (!$lecturer) {
-  header('location: /not-found.php');
+  header('location: /views/not-found.php');
 }
 
 $departments = Department::getDepartments();
