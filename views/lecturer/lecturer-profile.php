@@ -3,34 +3,11 @@ require_once('../../lib/layout.php');
 $title = "Lecturer Profile";
 $style = "../../static/stylesheets/index.css";
 require_once('../../modules/Lecturer.php');
+require_once('../../modules/Course.php');
 
-$fakeId = 1;
-$lect = Lecturer::getLecturerByEmployeeID($fakeId);
-
-var_dump($lect);
-
-$lecturer = [
-  'lecturer_id' => 1236778,
-  'title' => 'Mr',
-  'name' => 'Ikeoluwapo Are',
-  'phone' => '0405068886',
-  'email' => 'johndoe@mmm.co',
-  'department' => 'Computer Science',
-  'courses' => [
-    [
-      'course_code' => 'CSC 415',
-    'course_title' => 'Web Design'
-    ],
-    [
-      'course_code' => 'CSC 415',
-    'course_title' => 'Web Design'
-    ],
-    [
-      'course_code' => 'CSC 415',
-    'course_title' => 'Web Design'
-    ],
-  ]
-]
+$fakeId = 2;
+$lecturer = Lecturer::getLecturerByID($fakeId);
+$courses = Course::getLecturerCourses($fakeId);
 
 ?>
     <div class="container profile">
@@ -43,22 +20,19 @@ $lecturer = [
 
         <div class="details">
           <p class="fields">ID:</p>
-          <p class="values"><?php echo $lecturer["lecturer_id"];?></p>
+          <p class="values"><?php echo $lecturer["employeeID"];?></p>
 
           <p class="fields">Title:</p>
           <p class="values"><?php echo $lecturer["title"]?></p>
 
           <p class="fields">Name:</p>
-          <p class="values"><?php echo $lecturer["name"]?></p>
-
-          <p class="fields">Phone:</p>
-          <p class="values"><?php echo $lecturer["phone"]?></p>
+          <p class="values"><?php echo $lecturer["firstName"] ." ". $lecturer["lastName"]?></p>
 
           <p class="fields">Email:</p>
           <p class="values"><?php echo $lecturer["email"]?></p>
 
           <p class="fields">Department:</p>
-          <p class="values"><?php echo $lecturer["department"]?></p>
+          <p class="values"><?php echo $lecturer["departmentName"]?></p>
         </div>
       </div>
 
@@ -72,10 +46,10 @@ $lecturer = [
           </div>
 
           <?php 
-          foreach ($lecturer['courses'] as $course) {
+          foreach ($courses as $course) {
             echo "<div class='row'>
-            <div class='col col-3'>" . $course['course_code'] ."</div>
-            <div class='col col-3'>" . $course['course_title'] ."</div>
+            <div class='col col-3 text-uppercase'>" . $course['code'] ."</div>
+            <div class='col col-3 text-capitalize'>" . $course['title'] ."</div>
           </div>";
           }
           ?>
