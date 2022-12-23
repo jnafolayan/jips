@@ -14,3 +14,6 @@ INSERT INTO `lecturer` (employeeID, title, passwordHash, firstName, lastName, em
     VALUES (1011, 'Mrs.', 'password', 'Ike', 'Are', 'i@gmail.com', 1);
     
     INSERT INTO `lecturerCourse` (lecturerID, courseID) VALUES (2, 1);
+
+INSERT INTO `rescheduleRequest` (courseID, lecturerID, day, startTime, endTime)
+VALUES (1, 2, "Monday", "now", "tomorrow");
