@@ -13,4 +13,4 @@ INSERT INTO `lecturer` (employeeID, title, passwordHash, firstName, lastName, em
 INSERT INTO `lecturer` (employeeID, title, passwordHash, firstName, lastName, email, departmentID)
     VALUES (1011, 'Mrs.', 'password', 'Ike', 'Are', 'i@gmail.com', 1);
     
-    INSERT INTO `lecturerCourse` (lecturerID, courseID) VALUES (2, 1);
+INSERT INTO `lecturerCourse` (lecturerID, courseID) VALUES (2, 1);
