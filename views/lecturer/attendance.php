@@ -16,6 +16,7 @@
   <body>
 
 <?php
+require_once('./partials/session.php');
 require_once('../../modules/Lecture.php');
 require_once('../../modules/Attendance.php');
 

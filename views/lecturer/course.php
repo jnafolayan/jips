@@ -1,4 +1,5 @@
 <?php
+require_once('./partials/session.php');
 require_once('../../lib/layout.php');
 require_once('../../modules/Course.php');
 require_once('../../modules/Lecture.php');

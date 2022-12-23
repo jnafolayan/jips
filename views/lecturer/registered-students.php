@@ -1,4 +1,6 @@
 <?php
+require_once('./partials/session.php');
+
 require_once('../../lib/layout.php');
 $title = "Registered Students";
 $style = "../../static/stylesheets/index.css";
