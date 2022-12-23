@@ -1,10 +1,10 @@
 <?php
 require_once('../../lib/layout.php');
-
-$style = "../../static/stylesheets/admin/add-lecture.css";
-
 require_once('../../modules/Course.php');
 require_once('../../modules/Lecture.php');
+
+$title = "Add Lecture";
+$style = "../../static/stylesheets/admin/add-lecture.css";
 
 $courses = Course::getCourses();
 $submitError = null;

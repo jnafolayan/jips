@@ -1,6 +1,7 @@
 <?php
 require_once('../../lib/layout.php');
 
+$title = 'View Lecture';
 $style = "../../static/stylesheets/admin/view-lecture-info.css";
 ?>
 

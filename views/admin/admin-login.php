@@ -1,3 +1,23 @@
+<?php
+require_once('../../modules/Auth.php');
+
+$loginError = null;
+
+if (isset($_POST['submit'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $res = Auth::adminSignIn($username, $password);
+  if ($res) {
+    session_start();
+    $_SESSION['user'] = $res['user'];
+    $_SESSION['role'] = $res['role'];
+    header('location: /views/admin/admin.php');
+  } else {
+    $loginError = 'Unable to log in.';
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +53,13 @@
           <input type="password" class="form-control" id="password" name="password">
         </div>
 
-        <button type="submit" class="btn btn-success">Submit</button>
+        <input type="submit" name="submit" class="btn btn-success" value="Submit" />
+
+        <?php
+        if ($loginError) {
+          echo "<p class='text-danger'>$loginError</p>";
+        }
+        ?>
       </form>
     </div>
   </div>
