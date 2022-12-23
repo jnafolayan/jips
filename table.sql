@@ -58,8 +58,17 @@ CREATE TABLE IF NOT EXISTS `lecture` (
     day VARCHAR(20) NOT NULL,
     startTime VARCHAR(10) NOT NULL,
     endTime VARCHAR(10) NOT NULL,
+    status VARCHAR(25) DEFAULT 'pending',
+    isHOD BOOLEAN DEFAULT 0,
     createdAt DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     updatedAt DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     PRIMARY KEY(id),
     FOREIGN KEY(courseID) REFERENCES course(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `attendance` (
+    lectureID INT UNSIGNED NOT NULL,
+    matricNumber VARCHAR(25) NOT NULL,
+    PRIMARY KEY(lectureID, matricNumber),
+    FOREIGN KEY(lectureID) REFERENCES lecture(id) ON DELETE CASCADE
 );

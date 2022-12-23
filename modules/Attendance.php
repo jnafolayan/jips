@@ -4,36 +4,30 @@ require_once(__DIR__ . '/../db.php');
 
 class Attendance
 {
-    public static function adminSignIn($username, $password)
+    public static function getAttendanceForLecture($lectureID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT * FROM admin WHERE username='$username' AND passwordHash='$password'");
+        $res = $conn->query("SELECT * FROM attendance 
+        LEFT JOIN lecture ON attendance.lectureID = lecture.id 
+        WHERE lectureID='$lectureID'");
+
+        $result = [];
         if ($res->num_rows > 0) {
-            $admin = $res->fetch_assoc();
-            $role = "admin";
-            return array(
-                "user" => $admin,
-                "role" => $role,
-            );
+            while ($row = $res->fetch_assoc()) {
+                array_push($result, $row);
+            }
         }
 
-        return null;
+        return $result;
     }
 
-    public static function lecturerSignIn($employeeID, $password)
+    public static function takeAttendanceForLecture($lectureID, $matricNumber)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT * FROM lecturer WHERE employeeID='$employeeID' AND passwordHash='$password'");
-        if ($res->num_rows > 0) {
-            $lecturer = $res->fetch_assoc();
-            $role = "lecturer";
-            return array(
-                "user" => $lecturer,
-                "role" => $role,
-            );
-        }
+        $res = $conn->query("INSERT INTO attendance (lectureID, matricNumber) 
+        VALUES ('$lectureID', '$matricNumber')");
 
-        return null;
+        return $res;
     }
 }
 

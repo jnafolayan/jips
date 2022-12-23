@@ -19,6 +19,13 @@ class Lecturer
         return false;
     }
 
+    public static function makeLecturerHOD($lecturerID)
+    {
+        $conn = DB::getConnection();
+        $res = $conn->query("UPDATE lecturer SET isHod=1 WHERE id='$lecturerID'");
+        return $res;
+    }
+
     public static function getLecturers()
     {
         $conn = DB::getConnection();

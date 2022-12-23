@@ -4,12 +4,13 @@ require_once(__DIR__ . '/../db.php');
 
 class Department
 {
-    public static function createDepartment($name)
+    public static function createDepartment($name, $hodLecturerID)
     {
         $conn = DB::getConnection();
         $res = $conn->query("INSERT INTO department (name) VALUES ('$name')");
 
         if ($res === true) {
+            Lecturer::makeLecturerHOD($hodLecturerID);
             return $conn->insert_id;
         }
 
