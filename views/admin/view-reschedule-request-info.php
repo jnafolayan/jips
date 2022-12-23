@@ -3,6 +3,7 @@ require_once('../../lib/layout.php');
 $style = "../../static/stylesheets/admin/view-reschedule-request-info.css";
 $script = "../static/scripts/view-reschedule-request-info.js";
 
+$i = '';
 $request = [
   "id" => "Req{$i}_ID",
   "subject" => "Request{$i}_Subject",

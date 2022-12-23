@@ -23,7 +23,7 @@ if(isset($_GET['lecture_id'])){
         $res = Lecture::startLecture($_GET['lecture_id']);
 
         if($res){
-          $link = "<a href='attendance.php?lecture_id=" . $_GET['lecture_id'] ." '> Attendance registration link</a>";
+          $link = "<a target='_blank' href='attendance.php?lecture_id=" . $_GET['lecture_id'] ." '> Attendance registration link</a>";
         }
       }
       elseif($_POST['action'] === 'End Lecture'){
@@ -52,12 +52,11 @@ if(isset($_GET['lecture_id'])){
         <form action='' method='post' class='d-flex gap-3'>
           <input class='btn btn-success' name='action' type='submit' value='Start Lecture' />
           <input class='btn btn-danger' name='action' type='submit' value='End Lecture' />
-          <button
+          <a
             class='btn btn-dark d-flex'
-            data-bs-toggle='modal'
-            data-bs-target='#exampleModal'
-            href='#'
-            >Reschedule Lecture</button
+
+            href='reschedule-lecture.php?lecture_id=". $_GET['lecture_id'] ."'
+            >Reschedule Lecture</a
           >
 
         </form>
@@ -76,7 +75,7 @@ if(isset($_GET['lecture_id'])){
         <div class='col'>23-12-22</div>
         <div class='col'>". count($attendance)."</div>
         <div class='col'>
-          <a class='btn btn-primary' href='registered-students.php?lecture_id=" . $_GET['lecture_id'] ."' >View Students</a>
+          <a class='btn btn-primary' target='_blank' href='registered-students.php?lecture_id=" . $_GET['lecture_id'] ."' >View Students</a>
         </div>
       </div>
 
