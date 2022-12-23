@@ -79,14 +79,14 @@ class Lecture
     public static function startLecture($lectureID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("UPDATE lecture SET status='started' WHERE id='$lectureID'");
+        $res = $conn->query("UPDATE lecture SET status='started' WHERE id='$lectureID' AND status='pending'");
         return $res;
     }
 
     public static function endLecture($lectureID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("UPDATE lecture SET status='ended' WHERE id='$lectureID'");
+        $res = $conn->query("UPDATE lecture SET status='ended' WHERE id='$lectureID' AND status='started'");
         return $res;
     }
 }
