@@ -51,7 +51,7 @@ class Lecture
     public static function getLectureByID($lectureID)
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT l.id AS id, l.*, c.* FROM lecture l 
+        $res = $conn->query("SELECT c.*, l.* FROM lecture l 
         LEFT JOIN course c ON l.courseID = c.id 
         WHERE l.id='$lectureID'");
 
@@ -98,7 +98,7 @@ class Lecture
     public static function getLectures()
     {
         $conn = DB::getConnection();
-        $res = $conn->query("SELECT l.id AS id, l.*, c.* FROM lecture l LEFT JOIN course c ON l.courseID = c.id");
+        $res = $conn->query("SELECT c.*, l.* FROM lecture l LEFT JOIN course c ON l.courseID = c.id");
 
         $result = [];
         if ($res->num_rows > 0) {

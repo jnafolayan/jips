@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('../../lib/layout.php');
 $title = 'View Course';
 $style = "../../static/stylesheets/admin/view-course-info.css";
@@ -88,8 +87,5 @@ $levels = ['100', '200', '300', '400', '500'];
         </div>
       </div>
     </div>
-    <<<<<<< HEAD </div>
   </div>
-  =======
 </div>
->>>>>>> ceb039274111f1d2a58c1fc78c881c76cfce9916

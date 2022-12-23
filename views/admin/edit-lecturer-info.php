@@ -73,7 +73,11 @@ if (isset($_POST["submit"])) {
         foreach ($departments as $dept) {
           $deptID = $dept['id'];
           $deptName = $dept['name'];
-          echo "<option value='$deptID'>{$deptName}</option>";
+          if ($deptID === $lecturer['departmentID']) {
+            echo "<option value='$deptID' selected>{$deptName}</option>";
+          } else {
+            echo "<option value='$deptID'>{$deptName}</option>";
+          }
         }
         ?>
       </select>
